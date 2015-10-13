@@ -1,0 +1,184 @@
+*:not(input):not(textarea){
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+h1{
+	font-size: 28pt;
+}
+h2{
+	font-size: 23pt;
+}
+h3{
+	font-size: 17pt;
+}
+h4{
+	font-size: 15pt;
+}
+h5{
+	font-size: 13pt;
+}
+h6{
+	font-size: 11pt;
+}
+a{
+	color: #276D7D;
+	text-decoration: none;
+}
+html, body{
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	background: #E6E6E6;
+	font-size: 12pt;
+	line-height: 22pt;
+	color: #505050;
+	direction: rtl;
+	overflow-x: hidden;
+}
+
+.part{
+	width: 100%;
+}
+
+.part > .content{
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 100px 15px;
+}
+.part.mini-width > .content{
+	max-width: 420px;
+}
+.part h1{
+	text-align: center;
+	padding: 0 0 15px 0;
+}
+.part h5{
+	text-align: justify;
+	margin: 25px 0 0 0;
+}
+.part table{
+	width: 100%;
+}
+.part table td:first-child{
+	text-align: right;
+}
+.part table td:last-child{
+	text-align: left;
+}
+.part hr{
+	border: none;
+	border-bottom: solid 5px rgba(255,255,255,.1);
+	margin: 15px 0;
+	height: 0;
+}
+.part hr.dark{
+	border-bottom-color: rgba(0,0,0,.1);
+}
+.part svg.crooked {
+    pointer-events: none;
+	pointer-events: none;
+	display: block;
+	height: 70px;
+}
+.part svg.crooked.blue-to-light{
+	fill: #03768C;
+    stroke: #03768C;
+	background: #E6E6E6;
+}
+.part svg.crooked.light-to-dark{
+	fill: #E6E6E6;
+    stroke: #E6E6E6;
+	background: #2C2C2C;
+}
+.part svg.crooked.dark-to-light{
+	fill: #2C2C2C;
+    stroke: #2C2C2C;
+	background: #E6E6E6;
+}
+
+.bg-blue{
+	background: #03768C;
+	color: #E6E6E6;
+}
+.bg-light{
+	background: #E6E6E6;
+	color: #2C2C2C;
+	border-color: #03768C;
+}
+.bg-dark{
+	background: #2C2C2C;
+	color: #E6E6E6;
+	border-color: #E6E6E6;
+}
+
+
+
+
+
+
+#part-info p{
+	text-align: justify;
+}
+#part-resume table tr td:first-child{
+	color: #0293AF;
+}
+#part-design-sample .content{
+	max-width: 960px;
+}
+
+#profile-pic{
+	background: rgba(0,0,0,.3) url('../face.png') no-repeat center;
+	background-size: 100%;
+	width: 230px;
+	height: 230px;
+	margin: 0 auto 25px auto;
+	border-radius: 230px;
+	border: solid 8px #E6E6E6;
+}
+
+.nai-value{
+	height: 20px;
+	background: rgba(0,0,0,.15);
+	border-radius: 4px;
+	overflow: hidden;
+	min-width: 100px;
+}
+.nai-value div{
+	background: #03768C;
+    position: relative;
+    border-left: solid 5px rgba(0,0,0,.2);
+    height: 40px;
+	margin-top: -10px;
+	right: 0;
+}
+
+.item{
+	opacity: 0;
+	transition: all 2s;
+}
+.item.from-right{
+	transform: scale(1.1) translateX(20%);
+}
+.item.from-left{
+	transform: scale(1.1) translateX(-20%);
+}
+.item.rotate{
+	transform: rotateZ(180deg);
+}
+.item.zoom-in{
+	transform: scale(.7);
+}
+
+.item.loaded{
+	opacity: 1;
+	transform: scale(1) translate(0) rotate(0deg);
+}
+
+.b{
+	font-weight: bold;
+}
