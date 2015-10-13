@@ -26,19 +26,19 @@
 <body>
 	<header id="header">
 		<h1>
-		{{ site.name }}
+			<a href="{{ site.baseurl }}">
+				{{ site.name }}
+			</a>
 		</h1>
 		<h5>
-		{{ site.description }}
+			{{ site.description }}
 		</h5>
-		<!-- section id="menu">
+		<section id="menu">
 			<ul>
-				<li> <a href="#"> آهنگ‌ها </a> </li>
-				<li  class="selected"> <a href="#"> متن‌ها </a> </li>
-				<li> <a href="#"> شعرها </a> </li>
-				<li> <a href="#"> عکس‌ها </a> </li>
+				<li class="selected"> <a href="#"> وبلاگ </a> </li>
+				<li> <a href="{{ site.baseurl }}//resume.html"> رزومه </a> </li>
 			</ul>
-		</section -->
+		</section>
 	</header>
 	<section id="content">
 		{{ content }}
