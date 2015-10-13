@@ -1,0 +1,234 @@
+@font-face {
+	font-family: 'IRAN';
+	src: 	url("../font/IRAN.woff") format("woff");  /* IE6–8 */
+	src: 	url("../font/IRAN.eot?#ie6") format("eot"),  /* IE6–8 */
+			url("../font/IRAN.woff") format("woff"),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+			url("../font/IRAN.svg") format("svg")
+			url("../font/IRAN.ttf") format("truetype");
+	font-weight:normal;
+	font-style:normal;
+}
+
+*{
+	margin: 0;
+	padding:0;
+	font-family: IRAN, Tahoma;
+	direction: rtl;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	outline: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+h1{
+	font-size: 27pt;
+}
+h2{
+	font-size: 23pt;
+}
+h3{
+	font-size: 17pt;
+}
+h4{
+	font-size: 15pt;
+}
+h5{
+	font-size: 13pt;
+}
+h6{
+	font-size: 10pt;
+}
+a{
+	color: #276D7D;
+	text-decoration: none;
+}
+body{
+	background: #E6E6E6;
+	font-size: 12pt;
+	line-height: 22pt;
+	color: #505050;
+}
+
+#header_img{
+	
+	
+}
+#header{
+	padding: 40px 0 50px 0;
+	color: #4F4F4F;
+	/* border-bottom: dotted 5px #D6D6D6; */
+	text-align: center;
+	background: url('../../images/header.jpg') no-repeat center;
+	background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+	/* border-bottom: dotted 5px #D6D6D6; */
+	height: 270px;
+	box-shadow: inset 0 -40px 40px #E6E6E6;
+}
+	#header > h1{
+		margin: 15px 0;
+	}
+	#header > h5{
+		font-weight: normal;
+	}
+
+
+
+#menu {
+	color: #505050;
+	padding: 14px;
+	
+	text-align: center;
+}
+	#menu > ul{
+		list-style: none;
+		padding: 15px 0;
+	}
+	#menu > ul > li{
+		display: inline;
+		padding: 5px 15px;
+		color: #737676;
+		font-size: 14pt;
+		font-weight: bold;
+		transition: all .3s;
+	}
+	#menu > ul > li.selected{
+		border-bottom: solid 5px #276D7D;
+		color: #276D7D;
+	}
+	#menu > ul > li:hover{
+		color: #276D7D;
+	}
+	#menu > ul > li > a{
+		color: inherit;
+	}
+	
+#content{
+	padding-top: 15px;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+#content > .post{
+	border-bottom: dotted 5px #D6D6D6;
+	margin-bottom: 15px;
+	display: block;
+	padding: 15px 0;
+}
+
+#content > .post > .header{
+	padding: 0 15px 4px 15px;
+	background: #E6E6E6;
+	height: auto;
+	display: block;
+	width: 100%;
+	text-align: right;
+	
+}
+#content > .post > .header.cloned{
+	position: fixed;
+	top: 0;
+	padding-top: 5px;
+}
+
+#content > .post > .header > .title{
+	color: #276D7D;
+	display: inline;
+}
+#content > .post > .header > .date{
+	color: #505050;
+	font-weight: normal;
+	display: inline-block;
+}
+#content > .post > .header > .percetage-container{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	display: none;
+}
+#content > .post > .header > .percetage-container > .percetage{
+	background: #276D7D;
+	float: left;
+	height:100%;
+	width: 25%;
+}
+#content > .post > .header.cloned > .percetage-container{
+	display: inline-block;
+}
+	
+#content > .post > .body{
+	font-size: 13pt;
+	line-height: 25pt;
+	padding: 15px;
+	color: #505050;
+}
+#content > .post > .body br{
+	display: block;
+	height: 2px;
+}
+#content > .post > .body hr{
+	border: none;
+	margin: 50px 0;
+}
+#content .post .body q{
+	padding: 30px;
+	margin: 15px 0;
+	width: 100%;
+	display: block;;
+	border-radius: 15px;
+	text-align: justify;
+}
+#content .post .body q:before{
+	font-family: fontello;
+	content: '\e815';
+	font-size: 20pt;
+	margin: 0 10px;
+	display: inline-block;
+	vertical-align: middle;
+	
+}
+
+#content .post .body p{
+	margin: 0 0 15px 0;
+	text-align: justify;
+}
+#content .post .body p:before{
+	content: ' ';
+	margin: 0 10px;
+	display: inline-block;
+	vertical-align: middle
+}
+
+
+
+
+#footer {
+
+}
+
+
+.clear-both{
+	clear: both;
+}
+.clickable{
+	cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+/* 	aside{
+		flex: 1 100%;
+		border-right: none;
+		border-bottom: dotted 5px #D6D6D6;
+	}
+	#content{
+		flex: 1 100%;
+	} */
+
+}
+
