@@ -4,10 +4,25 @@ layout: default
 <article class="post">
 	<div class="header">
 		<h3 class="title"> <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a> </h3>
-		<h6 class="date"> {{ page.date | date: "%Y-%m-%d" }} </h6>
-		<!-- span class="percetage-container">
-			<span class="percetage"></span>
-		</span -->
+		<h6 class="date">
+			{% assign m = page.date | date: "%-m" %}
+			{{ page.date | date: "%-d" }}
+			{% case m %}
+			  {% when '1' %}فروردین
+			  {% when '2' %}اردیبهشت
+			  {% when '3' %}خرداد
+			  {% when '4' %}تیر
+			  {% when '5' %}مرداد
+			  {% when '6' %}شهریور
+			  {% when '7' %}مهر
+			  {% when '8' %}آبان
+			  {% when '9' %}آذر
+			  {% when '10' %}دی
+			  {% when '11' %}بهمن
+			  {% when '12' %}اسفند
+			{% endcase %}
+			{{ page.date | date: "%Y" }}
+		</h6>
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
@@ -56,11 +71,10 @@ layout: default
 		</div>
 	</div>
 </article>
-
 <script>
 	$('#new-comment').submit( function(){
 		var data = $(this).serializeArray();
-		var url = "http://pooleapp.com/stash/676390e8-66af-442f-b9a8-9ab5b2899bc9/";
+		var url = "http://pooleapp.com/stash/{{site.pooleapp_api}}/";
 		$.post(url, data, function(){
 			alert('کامنت شما ثبت شد و پس از تایید نویسنده، نمایش داده می‌شود.');
 		});
