@@ -205,6 +205,10 @@ body{
 	display: inline-block;
 	vertical-align: middle
 }
+#content .post > .comments{
+	width: 100%;
+}
+
 #content .post > .comments > .new-comment,
 #content .post > .comments > .list{
 	width: 50%;
@@ -213,12 +217,21 @@ body{
 }
 #content .post > .comments > .new-comment{
 	float: right;
-	/* border-left: solid #D6D6D6 2px; */
 }
 #content .post > .comments > .list{
 	float: left;
-	/* border-right: solid #D6D6D6 2px; */
 }
+#content .post > .comments > .new-comment h5,
+#content .post > .comments > .list h5{
+	display: block;
+	color: #757575;
+	padding-top: 7.5px;
+	margin-bottom: 15px;
+	font-weight: normal;
+}
+
+
+
 
 #content .post > .comments > .new-comment > table{
 	width: 100%;

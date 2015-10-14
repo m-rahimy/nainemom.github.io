@@ -13,8 +13,10 @@ layout: default
 	<div class="body">
 		 {{ content }}
 	</div>
+		
 	<div class="comments">
 		<form class="new-comment" action="http://pooleapp.com/stash/676390e8-66af-442f-b9a8-9ab5b2899bc9/" method="post">
+			<h5>کامنت بگذارید:</h5>
 			<table>
 				<tr>
 					<td>
@@ -42,6 +44,7 @@ layout: default
 			</table>
 		</form>
 		<div class="list">
+			<h5>لیست کامنت‌ها:</h5>
 			{% for comment in site.data.comments %}
 				{% if comment.postid == page.id %}
 				<div class="comment">
