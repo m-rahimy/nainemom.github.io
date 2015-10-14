@@ -4,25 +4,7 @@ layout: default
 <article class="post">
 	<div class="header">
 		<h3 class="title"> <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a> </h3>
-		<h6 class="date">
-			{% assign m = page.date | date: "%-m" %}
-			{{ page.date | date: "%-d" }}
-			{% case m %}
-			  {% when '1' %}فروردین
-			  {% when '2' %}اردیبهشت
-			  {% when '3' %}خرداد
-			  {% when '4' %}تیر
-			  {% when '5' %}مرداد
-			  {% when '6' %}شهریور
-			  {% when '7' %}مهر
-			  {% when '8' %}آبان
-			  {% when '9' %}آذر
-			  {% when '10' %}دی
-			  {% when '11' %}بهمن
-			  {% when '12' %}اسفند
-			{% endcase %}
-			{{ page.date | date: "%Y" }}
-		</h6>
+		<h6 class="date">{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }}{% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %}{{ page.date | date: "%Y" }}</h6>
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
@@ -30,7 +12,7 @@ layout: default
 	</div>
 		
 	<div class="comments">
-		<form class="new-comment" id="new-comment">
+		<form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/{{site.pooleapp_apikey}}/">
 			<h5>کامنت بگذارید:</h5>
 			<table>
 				<tr>
@@ -51,41 +33,55 @@ layout: default
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="hidden" name="redirect_to" value="{{page.url}}">
-						<input type="hidden" name="postid" value="{{page.id}}">
-						<button type="submit"> ثبت </button>
+						<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
+						<input type="hidden" name="post" id="post-id" value="{{page.id}}">
+						<button type="submit" > ثبت </button>
 					</td>
 				</tr>
 			</table>
 		</form>
 		<div class="list">
 			<h5>لیست کامنت‌ها:</h5>
-			{% for comment in site.data.comments %}
-				{% if comment.postid == page.id %}
-				<div class="comment">
-					<span class="name">{{ comment.name }}</span>
-					<span class="body">{{ comment.body }}</span>
-				</div>
-				{% endif %}
-			{% endfor %}
+			<div id="comment-list">
+				<div class="loading" id="comment-loading">در حال بازیابی کامنت‌ها...</div>
+				<div class="no-comment hidden" id="no-comment">اولین نفری باشید که کامنت می‌گذارد!</div>
+			</div>
 		</div>
 	</div>
 </article>
 <script>
-	$('#new-comment').submit( function(){
-		var els = $(this).find('[name]');
-		for(var i = 0; i < els.length; i++){
-			if( els.eq(i)[0].checkValidity() == false ){
-				els.eq(i).focus();
-				return false;
-			}
+	var cmUrl = 'http://pooleapp.com/data/{{site.pooleapp_apisecret}}.json';
+	var cmList = document.getElementById('comment-list');
+	var post = document.getElementById('post-id').value;
+	
+	// load comments
+	var cmRequest = new XMLHttpRequest();
+	cmRequest.open('GET', cmUrl, true);
+	cmRequest.onreadystatechange = function() {
+		if (cmRequest.readyState != 4 || cmRequest.status != 200) return false;
+		document.getElementById('comment-loading').classList.add('hidden');
+		var data = JSON.parse(cmRequest.responseText).sessions;
+		var cm, name, body, counter=0;
+		for( i in data ){
+			if( data[i].post != post ) continue;
+			counter++;
+			name =  document.createElement('span');
+			name.classList.add('name');
+			name.innerHTML = data[i].name;
+			
+			body = document.createElement('span');
+			body.classList.add('body');
+			body.innerHTML = data[i].body;
+			
+			cm = document.createElement('div');
+			cm.classList.add('comment');
+			cm.appendChild(name);
+			cm.appendChild(body);	
+			
+			cmList.innerHTML = cm.outerHTML + cmList.innerHTML;
 		}
-		$(this).find('button').attr('disabled','disabled').css('opacity','.7');
-		var data = $(this).serializeArray();
-		var url = "http://pooleapp.com/stash/{{site.pooleapp_api}}/";
-		$.post(url, data, function(){
-			alert('کامنت شما ثبت شد و پس از تایید نویسنده، نمایش داده می‌شود.');
-		});
-		return false;
-	});
+		if( counter < 1 )
+			document.getElementById('no-comment').classList.remove('hidden');
+	};
+	cmRequest.send(null);
 </script>

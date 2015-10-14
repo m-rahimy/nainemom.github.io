@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
 	font-family: 'IRAN';
 	src: 	url("../font/IRAN.woff") format("woff");  /* IE6–8 */
 	src: 	url("../font/IRAN.eot?#ie6") format("eot"),  /* IE6–8 */
@@ -40,6 +40,10 @@ h5{
 h6{
 	font-size: 10pt;
 }
+.hidden{
+	display: none;
+}
+
 a{
 	color: #276D7D;
 	text-decoration: none;
@@ -49,6 +53,23 @@ body{
 	font-size: 12pt;
 	line-height: 22pt;
 	color: #505050;
+}
+button{
+	min-width: 80px;
+	padding: 5px;
+	background: #276D7D;
+	border: none;
+	border-bottom: solid 2px #1D505B;
+	color: #E6E6E6;
+	cursor: pointer;
+}
+button:active{
+	border-top: solid 2px #1D505B;
+	border-bottom: solid 0;
+}
+button[disabled]{
+	opacity: .8;
+	cursor: not-allowed;
 }
 
 #header_img{
@@ -252,32 +273,29 @@ body{
 }
 #content .post > .comments > .new-comment > table button{
 	float: left;
-	width: 80px;
-	padding: 5px;
-	background: #276D7D;
-	border: none;
-	border-bottom: solid 2px #1D505B;
-	color: #E6E6E6;
-	cursor: pointer;
 }
 
-#content .post > .comments > .list > .comment{
+#content .post > .comments > .list .comment,
+#content .post > .comments > .list .no-comment{
 	background: #DEDEDE;
 	padding: 15px;
 	margin-bottom: 15px;
 }
 
-#content .post > .comments > .list > .comment > .name{
+#content .post > .comments > .list .comment > .name{
 	color: #276D7D;
 	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+#content .post > .comments > .list .comment > .name:after{
+	content: ': ';
 }
 
-#content .post > .comments > .list > .comment > .body{
-	
-}
-#content .post > .comments > .list > .comment > .body:before,
-#content .post > .comments > .list > .comment > .body:after{
-	content: '"';
+#content .post > .comments > .list .loading{
+	background: url('../../images/loading.gif') no-repeat right center;
+	padding-right: 20px;
+	color: #276D7D;
 }
 
 #footer {
