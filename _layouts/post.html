@@ -47,9 +47,8 @@ layout: default
 		</form>
 
 		<div class="list">
-			{% for comment in site.data.comments.sessions %}
+			{% for comment in site.data.comments %}
 				{% if comment.postid == page.id %}
-				
 				<div class="comment">
 					<span class="name">{{ comment.name }}</span>
 					<span class="body">{{ comment.body }}</span>
