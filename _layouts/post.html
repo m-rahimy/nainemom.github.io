@@ -13,4 +13,13 @@ layout: default
 	<div class="body">
 		 {{ content }}
 	</div>
+	<div class="comments">
+	</div>
+	<form class="new-comment" action="http://pooleapp.com/stash/676390e8-66af-442f-b9a8-9ab5b2899bc9/" method="post">
+		<input type="hidden" name="redirect_to" value="{{ page.url }}" />
+		<input type="hidden" name="post-id" value="{{ page.id }}" />
+		<input type="email" name="email"></input>
+		<textarea name="body"></textarea>
+		<input type="submit" value="submit" />
+	</form>	
 </article>
