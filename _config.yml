@@ -22,7 +22,7 @@ pooleapp_apisecret: 0bdff430-e3a0-4bce-a0a9-0f87cb06abaf
 google_analytics:
 
 
-url: http://127.0.0.1:4000 #http://nainemom.github.io
+url: http://nainemom.github.io
 baseurl: #http://nainemom.github.io
 
 #
