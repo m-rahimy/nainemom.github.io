@@ -13,7 +13,6 @@ layout: default
 	<div class="body">
 		 {{ content }}
 	</div>
-	
 	<div class="comments">
 		<form class="new-comment" action="http://pooleapp.com/stash/676390e8-66af-442f-b9a8-9ab5b2899bc9/" method="post">
 			<table>
@@ -43,15 +42,14 @@ layout: default
 			</table>
 		</form>
 		<div class="list">
-			{% for comment in site.data.comments.sessions %}
-
+			{% for comment in site.data.comments %}
+				{% if comment.postid == page.id %}
 				<div class="comment">
 					<span class="name">{{ comment.name }}</span>
 					<span class="body">{{ comment.body }}</span>
 				</div>
-				
+				{% endif %}
 			{% endfor %}
 		</div>
 	</div>
-	
 </article>
