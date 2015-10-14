@@ -35,7 +35,8 @@ footer-links:
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
 disqus:
-livefyre: 378679
+pooleapp_api: 676390e8-66af-442f-b9a8-9ab5b2899bc9
+pooleapp_secret: 0bdff430-e3a0-4bce-a0a9-0f87cb06abaf
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
