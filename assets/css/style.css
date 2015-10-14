@@ -112,7 +112,6 @@ body{
 	margin: 0 auto;
 }
 #content > .post{
-	border-bottom: dotted 5px #D6D6D6;
 	margin-bottom: 15px;
 	display: block;
 	padding: 15px 0;
@@ -165,6 +164,7 @@ body{
 	line-height: 25pt;
 	padding: 15px;
 	color: #505050;
+	border-bottom: dotted 5px #D6D6D6;
 }
 #content > .post > .body br{
 	display: block;
@@ -174,15 +174,15 @@ body{
 	border: none;
 	margin: 50px 0;
 }
-#content .post .body q{
+#content .post > .body q{
 	padding: 30px;
 	margin: 15px 0;
 	width: 100%;
-	display: block;;
+	display: block;
 	border-radius: 15px;
 	text-align: justify;
 }
-#content .post .body q:before{
+#content .post > .body q:before{
 	font-family: fontello;
 	content: '\e815';
 	font-size: 20pt;
@@ -192,19 +192,77 @@ body{
 	
 }
 
-#content .post .body p{
+#content .post > .body p{
 	margin: 0 0 15px 0;
 	text-align: justify;
 }
-#content .post .body p:before{
+#content .post > .body p:before{
 	content: ' ';
 	margin: 0 10px;
 	display: inline-block;
 	vertical-align: middle
 }
+#content .post > .comments > .new-comment,
+#content .post > .comments > .list{
+	width: 50%;
+	padding: 7.5px;
+	font-size: 11pt;
+}
+#content .post > .comments > .new-comment{
+	float: right;
+	/* border-left: solid #D6D6D6 2px; */
+}
+#content .post > .comments > .list{
+	float: left;
+	/* border-right: solid #D6D6D6 2px; */
+}
 
+#content .post > .comments > .new-comment > table{
+	width: 100%;
+}
+#content .post > .comments > .new-comment input{
+	width: 100%;
+/* 	min-height: 170px; */
+	padding: 5px;
+	resize: vertical;
+	border: solid 1px #D6D6D6;
+}
+#content .post > .comments > .new-comment textarea{
+	width: 100%;
+	min-height: 170px;
+	padding: 5px;
+	resize: vertical;
+	border: solid 1px #D6D6D6;
+}
+#content .post > .comments > .new-comment > table button{
+	float: left;
+	width: 80px;
+	padding: 5px;
+	background: #276D7D;
+	border: none;
+	border-bottom: solid 2px #1D505B;
+	color: #E6E6E6;
+	cursor: pointer;
+}
 
+#content .post > .comments > .list > .comment{
+	background: #DEDEDE;
+	padding: 15px;
+	margin-bottom: 15px;
+}
 
+#content .post > .comments > .list > .comment > .name{
+	color: #276D7D;
+	font-weight: bold;
+}
+
+#content .post > .comments > .list > .comment > .body{
+	
+}
+#content .post > .comments > .list > .comment > .body:before,
+#content .post > .comments > .list > .comment > .body:after{
+	content: '"';
+}
 
 #footer {
 
@@ -221,14 +279,14 @@ body{
 
 
 @media screen and (max-width: 1024px) {
-/* 	aside{
-		flex: 1 100%;
-		border-right: none;
+	#content .post > .comments > .new-comment,
+	#content .post > .comments > .list{
+		width: 100%;
+		float: none;
+		padding: 15px;
+	}
+	#content .post > .comments > .new-comment{
 		border-bottom: dotted 5px #D6D6D6;
 	}
-	#content{
-		flex: 1 100%;
-	} */
-
 }
 
