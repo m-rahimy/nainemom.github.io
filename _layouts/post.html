@@ -47,7 +47,7 @@ layout: default
 		</form>
 
 		<div class="list">
-			{% for comment in site.data.comments.sessions %}
+			{% for comment in site.comments.yaml.sessions %}
 				{% if comment.postid == post.id %}
 				
 				<div class="comment">
