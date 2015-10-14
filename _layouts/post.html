@@ -30,7 +30,7 @@ layout: default
 	</div>
 		
 	<div class="comments">
-		<div class="new-comment" id="new-comment">
+		<form class="new-comment" id="new-comment">
 			<h5>کامنت بگذارید:</h5>
 			<table>
 				<tr>
@@ -38,7 +38,7 @@ layout: default
 						اسم:
 					</td>
 					<td>
-						<input name="name" placeholder=""></textarea>
+						<input name="name" placeholder="" required></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -46,7 +46,7 @@ layout: default
 						کامنت:
 					</td>
 					<td>
-						<textarea name="body"></textarea>
+						<textarea name="body" required></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -57,7 +57,7 @@ layout: default
 					</td>
 				</tr>
 			</table>
-		</div>
+		</form>
 		<div class="list">
 			<h5>لیست کامنت‌ها:</h5>
 			{% for comment in site.data.comments %}
@@ -73,6 +73,14 @@ layout: default
 </article>
 <script>
 	$('#new-comment').submit( function(){
+		var els = $(this).find('[name]');
+		for(var i = 0; i < els.length; i++){
+			if( els.eq(i)[0].checkValidity() == false ){
+				els.eq(i).focus();
+				return false;
+			}
+		}
+		$(this).find('button').attr('disabled','disabled').css('opacity','.7');
 		var data = $(this).serializeArray();
 		var url = "http://pooleapp.com/stash/{{site.pooleapp_api}}/";
 		$.post(url, data, function(){
