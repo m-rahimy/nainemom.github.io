@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post">
 	<div class="header">
-		<h3 class="title"> <a href="{{ site.baseurl }}{{ post.url }}">{{ page.title }}</a> </h3>
+		<h3 class="title"> <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a> </h3>
 		<h6 class="date"> {{ page.date | date: "%Y-%m-%d" }} </h6>
 		<span class="percetage-container">
 			<span class="percetage"></span>
@@ -38,8 +38,8 @@ layout: default
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="hidden" name="redirect_to" value="{{post.url}}">
-						<input type="hidden" name="postid" value="{{post.id}}">
+						<input type="hidden" name="redirect_to" value="{{page.url}}">
+						<input type="hidden" name="postid" value="{{page.id}}">
 						<button type="submit"> ثبت </button>
 					</td>
 				</tr>
@@ -48,7 +48,7 @@ layout: default
 
 		<div class="list">
 			{% for comment in site.comments.file.sessions %}
-				{% if comment.postid == post.id %}
+				{% if comment.postid == page.id %}
 				
 				<div class="comment">
 					<span class="name">{{ comment.name }}</span>
