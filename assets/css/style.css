@@ -191,6 +191,9 @@ body{
 	vertical-align: middle;
 	
 }
+#content .post > .body .read-more:before{
+	font-weight: bold;
+}
 
 #content .post > .body p{
 	margin: 0 0 15px 0;

@@ -13,7 +13,8 @@ layout: default
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
-		{{ post.content }}
+		{{ post.excerpt }}
+		<a class="read-more" href="{{ site.baseurl }}{{ post.url }}"> ادامه داستان </a>
 	</div>
 </article>
 {% endfor %}
