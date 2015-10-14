@@ -38,3 +38,14 @@ $( window).on('scroll resize',function() {
 
 	}
 });
+
+
+
+$('#new-comment').submit( function(){
+	var data = $(this).serializeArray();
+	var url = "http://pooleapp.com/stash/676390e8-66af-442f-b9a8-9ab5b2899bc9/";
+	$.post(url, data, function(){
+		alert('کامنت شما ثبت شد و پس از تایید نویسنده، نمایش داده می‌شود.');
+	});
+	return false;
+});
