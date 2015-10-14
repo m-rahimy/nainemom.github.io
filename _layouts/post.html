@@ -15,7 +15,6 @@ layout: default
 	</div>
 	
 	<div class="comments">
-	
 		<form class="new-comment" action="http://pooleapp.com/stash/676390e8-66af-442f-b9a8-9ab5b2899bc9/" method="post">
 			<table>
 				<tr>
@@ -43,9 +42,8 @@ layout: default
 				</tr>
 			</table>
 		</form>
-
 		<div class="list">
-			{% for comment in site.data.comments %}
+			{% for comment in site.data.comments.sessions %}
 
 				<div class="comment">
 					<span class="name">{{ comment.name }}</span>
