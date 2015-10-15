@@ -22,6 +22,25 @@
 	-moz-user-select: none;
 	-webkit-user-select: none;
 }
+*:not(input):not(textarea){
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+html, body{
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	background: #E6E6E6;
+	font-size: 12pt;
+	line-height: 22pt;
+	color: #505050;
+	direction: rtl;
+	overflow-x: hidden;
+}
+
 h1{
 	font-size: 27pt;
 }
@@ -48,12 +67,10 @@ a{
 	color: #276D7D;
 	text-decoration: none;
 }
-body{
-	background: #E6E6E6;
-	font-size: 12pt;
-	line-height: 22pt;
-	color: #505050;
+.b{
+	font-weight: bold;
 }
+
 button{
 	min-width: 80px;
 	padding: 5px;
@@ -77,17 +94,17 @@ button[disabled]{
 	
 }
 #header{
-	padding: 40px 0 50px 0;
+	padding: 40px 0 0 0;
 	color: #4F4F4F;
-	/* border-bottom: dotted 5px #D6D6D6; */
 	text-align: center;
-	background: url('../../images/header.jpg') no-repeat center;
+	/* background: url('../../images/header.jpg') no-repeat center; */
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;
+	background: #DEDEDE;
 	/* border-bottom: dotted 5px #D6D6D6; */
-	height: 270px;
-	box-shadow: inset 0 -40px 40px #E6E6E6;
+	height: 190px;
+	/* border-bottom: solid 5px #D6D6D6; */
 }
 	#header > h1{
 		margin: 15px 0;
@@ -100,9 +117,10 @@ button[disabled]{
 
 #menu {
 	color: #505050;
-	padding: 14px;
-	
+	padding: 2px 15px;
+	background: #D8D8D8;
 	text-align: center;
+	/* border-bottom: solid 5px #D6D6D6; */
 }
 	#menu > ul{
 		list-style: none;
@@ -117,7 +135,7 @@ button[disabled]{
 		transition: all .3s;
 	}
 	#menu > ul > li.selected{
-		border-bottom: solid 5px #276D7D;
+		/* border-bottom: solid 5px #276D7D; */
 		color: #276D7D;
 	}
 	#menu > ul > li:hover{
@@ -128,12 +146,13 @@ button[disabled]{
 	}
 	
 #content{
-	padding-top: 15px;
-	max-width: 1024px;
+	/* padding-top: 15px; */
 	margin: 0 auto;
 }
 #content > .post{
 	margin-bottom: 15px;
+	margin: 15px auto 0 auto;
+	max-width: 1024px;
 	display: block;
 	padding: 15px 0;
 }
@@ -228,6 +247,7 @@ button[disabled]{
 }
 #content .post > .comments{
 	width: 100%;
+	padding: 15px 7.5px 7.5px 7.5px;
 }
 
 #content .post > .comments > .new-comment,

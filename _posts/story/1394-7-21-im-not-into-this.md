@@ -1,5 +1,6 @@
 ---
 layout: post
+cat: story
 title: من این‌کاره نیستم!
 ---
 

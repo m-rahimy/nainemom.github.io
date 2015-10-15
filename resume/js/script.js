@@ -1,4 +1,4 @@
-function loadItems(){
+/* function loadItems(){
 	var allItems = document.querySelectorAll('.item:not(.loaded)');
 	for( var i = 0; i < allItems.length; i++ ){
 		if( isElementInViewport( allItems[i] ) ){
@@ -10,7 +10,7 @@ function loadItems(){
 
 ("scroll resize load".split(" ")).forEach(function(e){
 	window.addEventListener(e,loadItems,false);
-});
+}); */
 
 
 var swiper = new Swiper('#design-sample', {

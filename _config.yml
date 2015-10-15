@@ -1,4 +1,4 @@
-name: امیر مومنیان هستم
+name: امیر مومنیان
 description: و در این صفحه، داستان می‌نویسم.
 avatar: x.png
 dribbble:
@@ -22,8 +22,8 @@ pooleapp_apisecret: 0bdff430-e3a0-4bce-a0a9-0f87cb06abaf
 google_analytics:
 
 
-url: http://nainemom.github.io
-baseurl: #http://nainemom.github.io
+url: http://127.0.0.1:4000 #http://nainemom.github.io
+baseurl: #http://127.0.0.1:4000 #http://nainemom.github.io
 
 #
 # !! You don't need to change any of the configuration flags below !!

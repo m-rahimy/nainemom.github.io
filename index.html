@@ -1,17 +1,19 @@
 ---
 layout: default
 ---
-
+{{ page.title }}
 {% for post in site.posts %}
-<article class="post">
-	<div class="header">
-		<h3 class="title"> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </h3>
-		<h6 class="date">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%-d" }} {% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %} {{ post.date | date: "%Y" }}</h6>
-		<div class="clear-both"></div>
-	</div>
-	<div class="body">
-		{{ post.excerpt }}
-		<a class="read-more" href="{{ site.baseurl }}{{ post.url }}"> ادامه داستان </a>
-	</div>
-</article>
+	{% if post.cat != "sztory" %}
+		<article class="post">
+			<div class="header">
+				<h3 class="title"> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </h3>
+				<h6 class="date">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%-d" }} {% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %} {{ post.date | date: "%Y" }}</h6>
+				<div class="clear-both"></div>
+			</div>
+			<div class="body">
+				{{ post.excerpt }}
+				<a class="read-more" href="{{ site.baseurl }}{{ post.url }}"> ادامه داستان </a>
+			</div>
+		</article>
+	{% endif %}
 {% endfor %}

@@ -37,13 +37,28 @@ layout: default
 		</form>
 		<div class="list">
 			<div id="comment-list">
-				<div class="loading" id="comment-loading">در حال بازیابی دیدگاه‌ها...</div>
-				<div class="no-comment hidden" id="no-comment">اولین نفری باشید که برای این مطلب دیدگاه می‌نویسد!</div>
+				{% for comment in site.data.comments.sessions %}
+					{% if comment.post == page.id %}
+						<div class="comment">
+							<span class="name"> {{ comment.name }} </span>
+							<span class="body"> {{ comment.body }} </span>
+						</div>
+					{% endif %}
+				{% endfor %}
+				<!-- <div class="loading" id="comment-loading">در حال بازیابی دیدگاه‌ها...</div> -->
+				<!-- <div class="no-comment hidden" id="no-comment">اولین نفری باشید که برای این مطلب دیدگاه می‌نویسد!</div> -->
 			</div>
 		</div>
 	</div>
 </article>
 <script>
+	if( document.location.toString().indexOf('#comment_success') > 0 ){
+		window.history.pushState('', 'Title', '#');
+		alert('نظر شما ثبت و پس از تایید مدیر، به نمایش در می‌آید.');
+		
+	}
+</script>
+<!-- <script>
 	var cmUrl = 'http://pooleapp.com/data/{{site.pooleapp_apisecret}}.json';
 	var cmList = document.getElementById('comment-list');
 	var post = document.getElementById('post-id').value;
@@ -78,4 +93,4 @@ layout: default
 			document.getElementById('no-comment').classList.remove('hidden');
 	};
 	cmRequest.send(null);
-</script>
+</script> -->
