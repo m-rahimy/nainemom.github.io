@@ -4,7 +4,7 @@ layout: default
 <article class="post">
 	<div class="header">
 		<h3 class="title"> <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a> </h3>
-		<h6 class="date">{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }}{% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %}{{ page.date | date: "%Y" }}</h6>
+		<h6 class="date">{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }} {% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %} {{ page.date | date: "%Y" }}</h6>
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
@@ -13,38 +13,32 @@ layout: default
 		
 	<div class="comments">
 		<form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/{{site.pooleapp_apikey}}/">
-			<h5>کامنت بگذارید:</h5>
 			<table>
 				<tr>
+
 					<td>
-						اسم:
-					</td>
-					<td>
-						<input name="name" placeholder="" required></textarea>
+						<input name="name" placeholder="نام خود را وارد کنید" required></textarea>
 					</td>
 				</tr>
 				<tr>
+
 					<td>
-						کامنت:
-					</td>
-					<td>
-						<textarea name="body" required></textarea>
+						<textarea name="body" placeholder="چیزی بنویسید..." required></textarea>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">
+					<td colspan="">
 						<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
 						<input type="hidden" name="post" id="post-id" value="{{page.id}}">
-						<button type="submit" > ثبت </button>
+						<button type="submit" > انتشار </button>
 					</td>
 				</tr>
 			</table>
 		</form>
 		<div class="list">
-			<h5>لیست کامنت‌ها:</h5>
 			<div id="comment-list">
-				<div class="loading" id="comment-loading">در حال بازیابی کامنت‌ها...</div>
-				<div class="no-comment hidden" id="no-comment">اولین نفری باشید که کامنت می‌گذارد!</div>
+				<div class="loading" id="comment-loading">در حال بازیابی دیدگاه‌ها...</div>
+				<div class="no-comment hidden" id="no-comment">اولین نفری باشید که برای این مطلب دیدگاه می‌نویسد!</div>
 			</div>
 		</div>
 	</div>
