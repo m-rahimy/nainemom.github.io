@@ -1,5 +1,5 @@
 name: امیر مومنیان
-description: و در این صفحه، داستان می‌نویسم.
+description: مکانی مناسب برای تخلیه فکر!
 avatar: x.png
 dribbble:
 email: nainemom@gmail.com
@@ -19,7 +19,7 @@ googleplus: # anything in your profile username that comes after plus.google.com
 pooleapp_apikey: 676390e8-66af-442f-b9a8-9ab5b2899bc9
 pooleapp_apisecret: 0bdff430-e3a0-4bce-a0a9-0f87cb06abaf
 
-google_analytics:
+google_analytics: UA-68908462-1
 
 
 url: http://nainemom.github.io
