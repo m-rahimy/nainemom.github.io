@@ -45,8 +45,6 @@ layout: default
 						</div>
 					{% endif %}
 				{% endfor %}
-				<!-- <div class="loading" id="comment-loading">در حال بازیابی دیدگاه‌ها...</div> -->
-				<!-- <div class="no-comment hidden" id="no-comment">اولین نفری باشید که برای این مطلب دیدگاه می‌نویسد!</div> -->
 			</div>
 		</div>
 	</div>
@@ -54,43 +52,6 @@ layout: default
 <script>
 	if( document.location.toString().indexOf('#comment_success') > 0 ){
 		window.history.pushState('', 'Title', '#');
-		alert('نظر شما ثبت و پس از تایید مدیر، به نمایش در می‌آید.');
-		
+		alert('کامنت شما ثبت شد و اگر در آن فحش نداده باشید، احتمالا در مدت کوتاهی به نمایش در می‌آید.');
 	}
 </script>
-<!-- <script>
-	var cmUrl = 'http://pooleapp.com/data/{{site.pooleapp_apisecret}}.json';
-	var cmList = document.getElementById('comment-list');
-	var post = document.getElementById('post-id').value;
-	
-	// load comments
-	var cmRequest = new XMLHttpRequest();
-	cmRequest.open('GET', cmUrl, true);
-	cmRequest.onreadystatechange = function() {
-		if (cmRequest.readyState != 4 || cmRequest.status != 200) return false;
-		document.getElementById('comment-loading').classList.add('hidden');
-		var data = JSON.parse(cmRequest.responseText).sessions;
-		var cm, name, body, counter=0;
-		for( i in data ){
-			if( data[i].post != post ) continue;
-			counter++;
-			name =  document.createElement('span');
-			name.classList.add('name');
-			name.innerHTML = data[i].name;
-			
-			body = document.createElement('span');
-			body.classList.add('body');
-			body.innerHTML = data[i].body;
-			
-			cm = document.createElement('div');
-			cm.classList.add('comment');
-			cm.appendChild(name);
-			cm.appendChild(body);	
-			
-			cmList.innerHTML = cm.outerHTML + cmList.innerHTML;
-		}
-		if( counter < 1 )
-			document.getElementById('no-comment').classList.remove('hidden');
-	};
-	cmRequest.send(null);
-</script> -->
