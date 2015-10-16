@@ -9,18 +9,17 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-		<link href="{{ site.url }}/assets/css/cssreset.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/style.css" />
+		<link href="/assets/css/cssreset.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.url }}/feed.xml" />
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="/feed.xml" />
 	
 </head>
 <body>
 	<header id="header">
 		<h1>
-			<a href="{{ site.url }}">
-				{{ site.name }}
-			</a>
+			<img class="logo" src="/images/logo.png"/>
+			<a href="{{ site.url }}">{{ site.name }}</a>
 		</h1>
 		<h5>
 			{{ site.description }}
@@ -28,8 +27,8 @@
 	</header>
 	<section id="menu">
 		<ul>
-			<li class="{% if page.name == 'index.html' %}selected{% endif %}"><a href="{{ site.url }}"> وبلاگ (داستان) </a></li>
-			<li class="{% if page.name == 'resume.html' %}selected{% endif %}"> <a href="{{ site.url }}/resume.html"> رزومه </a></li>
+			<li class="{% if page.name == 'index.html' %}selected{% endif %}"><a href="/index.html"> وبلاگ (داستان) </a></li>
+			<li class="{% if page.name == 'resume.html' %}selected{% endif %}"> <a href="/resume.html"> رزومه </a></li>
 		</ul>
 	</section>
 	<section id="content">

@@ -97,17 +97,27 @@ button[disabled]{
 	padding: 40px 0 0 0;
 	color: #4F4F4F;
 	text-align: center;
-	/* background: url('../../images/header.jpg') no-repeat center; */
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;
 	background: #DEDEDE;
-	/* border-bottom: dotted 5px #D6D6D6; */
 	height: 190px;
-	/* border-bottom: solid 5px #D6D6D6; */
 }
 	#header > h1{
 		margin: 15px 0;
+	}
+	#header > h1 > a{
+		color: inherit;
+		transition: all .3s;
+	}
+	#header > h1 > a:hover{
+		color: #276D7D;
+	}
+	#header .logo{
+		width: 45px;
+		height: 38px;
+		vertical-align: middle;
+		margin-left: -7px;
 	}
 	#header > h5{
 		font-weight: normal;
@@ -120,7 +130,6 @@ button[disabled]{
 	padding: 2px 15px;
 	background: #D8D8D8;
 	text-align: center;
-	/* border-bottom: solid 5px #D6D6D6; */
 }
 	#menu > ul{
 		list-style: none;
@@ -130,12 +139,11 @@ button[disabled]{
 		display: inline;
 		padding: 5px 15px;
 		color: #737676;
-		font-size: 14pt;
+		font-size: 15pt;
 		font-weight: bold;
 		transition: all .3s;
 	}
 	#menu > ul > li.selected{
-		/* border-bottom: solid 5px #276D7D; */
 		color: #276D7D;
 	}
 	#menu > ul > li:hover{
@@ -146,7 +154,6 @@ button[disabled]{
 	}
 	
 #content{
-	/* padding-top: 15px; */
 	margin: 0 auto;
 }
 #content > .post{
@@ -204,7 +211,7 @@ button[disabled]{
 	line-height: 25pt;
 	padding: 15px;
 	color: #505050;
-	border-bottom: dotted 5px #D6D6D6;
+	border-bottom: dotted 3px #D6D6D6;
 }
 #content > .post > .body br{
 	display: block;
@@ -231,8 +238,12 @@ button[disabled]{
 	vertical-align: middle;
 	
 }
-#content .post > .body .read-more:before{
+#content .post > .body .read-more{
 	font-weight: bold;
+	padding: 0 5px;
+}
+#content .post > .body .read-more:after{
+	content: '...';
 }
 
 #content .post > .body p{
