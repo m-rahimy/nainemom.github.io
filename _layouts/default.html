@@ -17,10 +17,11 @@
 </head>
 <body>
 	<header id="header">
-		<h1>
-			<img class="logo" src="/images/logo.png"/>
-			<a href="{{ site.url }}">{{ site.name }}</a>
-		</h1>
+		<h1><a href="{{ site.url }}">
+			<!-- <img class="logo" src="/images/logo.png"/> -->
+			{% include logo.svg %}
+			{{ site.name }}
+		</a></h1>
 		<h5>
 			{{ site.description }}
 		</h5>

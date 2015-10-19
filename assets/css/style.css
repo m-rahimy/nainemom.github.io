@@ -48,7 +48,7 @@ h2{
 	font-size: 23pt;
 }
 h3{
-	font-size: 17pt;
+	font-size: 20pt;
 }
 h4{
 	font-size: 15pt;
@@ -73,7 +73,7 @@ a{
 
 button{
 	min-width: 80px;
-	padding: 5px;
+	padding: .4em 1em;
 	background: #276D7D;
 	border: none;
 	border-bottom: solid 2px #1D505B;
@@ -107,15 +107,18 @@ button[disabled]{
 		margin: 15px 0;
 	}
 	#header > h1 > a{
-		color: inherit;
+		color: #4F4F4F;
+		fill: #4F4F4F;
 		transition: all .3s;
 	}
 	#header > h1 > a:hover{
 		color: #276D7D;
+		fill: #276D7D;
 	}
-	#header .logo{
-		width: 45px;
-		height: 38px;
+	#header svg{
+ 		width: 43px;
+		height: 41px;
+		display: inline-block;
 		vertical-align: middle;
 		margin-left: -7px;
 	}
@@ -157,7 +160,7 @@ button[disabled]{
 	margin: 0 auto;
 }
 #content > .post{
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	margin: 15px auto 0 auto;
 	max-width: 1024px;
 	display: block;
@@ -172,11 +175,6 @@ button[disabled]{
 	width: 100%;
 	text-align: right;
 	
-}
-#content > .post > .header.cloned{
-	position: fixed;
-	top: 0;
-	padding-top: 5px;
 }
 
 #content > .post > .header > .title{
@@ -239,22 +237,28 @@ button[disabled]{
 	
 }
 #content .post > .body .read-more{
-	font-weight: bold;
-	padding: 0 5px;
+	/* font-weight: bold; */
+	color: #B10802;	
 }
+
 #content .post > .body .read-more:after{
 	content: '...';
 }
 
-#content .post > .body p{
-	margin: 0 0 15px 0;
+#content .post > .body p,
+#content .post > .body ul{
+	margin: .5em 0 2em 0;
 	text-align: justify;
 }
 #content .post > .body p:before{
 	content: ' ';
-	margin: 0 10px;
+	/* margin: 0 10px; */
 	display: inline-block;
 	vertical-align: middle
+}
+
+#content .post > .body ul{
+
 }
 #content .post > .comments{
 	width: 100%;
