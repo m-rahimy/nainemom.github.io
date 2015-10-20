@@ -10,7 +10,7 @@ layout: default
 	<div class="body">
 		 {{ content }}
 	</div>
-		
+	<hr/>
 	<div class="comments">
 		<form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/{{site.pooleapp_apikey}}/">
 			<table>
@@ -46,6 +46,7 @@ layout: default
 				{% endfor %}
 			</div>
 		</div>
+		<div class="clear-both"></div>
 	</div>
 </article>
 <script>

@@ -132,6 +132,9 @@ button[disabled]{
 	color: #505050;
 	padding: 2px 15px;
 	background: #D8D8D8;
+	border: solid 1px #D3D3D3;
+	border-left: none;
+	border-right: none;
 	text-align: center;
 }
 	#menu > ul{
@@ -160,16 +163,18 @@ button[disabled]{
 	margin: 0 auto;
 }
 #content > .post{
-	margin-bottom: 20px;
-	margin: 15px auto 0 auto;
+	/* margin-bottom: 20px; */
+	margin: 1em auto;
 	max-width: 1024px;
 	display: block;
-	padding: 15px 0;
+	padding: 1em;
+	
+	background: rgba(255,255,255,.2);
+	border: solid 1px #E0E0E0;
 }
 
 #content > .post > .header{
-	padding: 0 15px 4px 15px;
-	background: #E6E6E6;
+	padding: 1em 1em 0 1em;
 	height: auto;
 	display: block;
 	width: 100%;
@@ -186,38 +191,23 @@ button[disabled]{
 	font-weight: normal;
 	display: inline-block;
 }
-#content > .post > .header > .percetage-container{
-	position: fixed;
-	top:0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	display: none;
-}
-#content > .post > .header > .percetage-container > .percetage{
-	background: #276D7D;
-	float: left;
-	height:100%;
-	width: 25%;
-}
-#content > .post > .header.cloned > .percetage-container{
-	display: inline-block;
-}
+
 	
 #content > .post > .body{
 	font-size: 13pt;
 	line-height: 25pt;
-	padding: 15px;
+	padding: 0 1em 1em 1em;
 	color: #505050;
-	border-bottom: dotted 3px #D6D6D6;
+	/* border-bottom: dotted 3px #D6D6D6; */
 }
 #content > .post > .body br{
 	display: block;
 	height: 2px;
 }
-#content > .post > .body hr{
+#content > .post  hr{
 	border: none;
-	margin: 50px 0;
+	border-bottom: solid 1px #E0E0E0;
+	margin: 1em 0;
 }
 #content .post > .body q{
 	padding: 30px;
@@ -238,7 +228,8 @@ button[disabled]{
 }
 #content .post > .body .read-more{
 	/* font-weight: bold; */
-	color: #B10802;	
+	margin-top: -1em;
+	color: #B10802;
 }
 
 #content .post > .body .read-more:after{
@@ -247,7 +238,7 @@ button[disabled]{
 
 #content .post > .body p,
 #content .post > .body ul{
-	margin: .5em 0 2em 0;
+	margin: 1em 0 1em 0;
 	text-align: justify;
 }
 #content .post > .body p:before{
@@ -262,7 +253,10 @@ button[disabled]{
 }
 #content .post > .comments{
 	width: 100%;
-	padding: 15px 7.5px 7.5px 7.5px;
+	/* background: #E6E6E6; */
+	padding: 1em .5em;
+	overflow: visible;
+	height: auto;
 }
 
 #content .post > .comments > .new-comment,
@@ -295,14 +289,15 @@ button[disabled]{
 #content .post > .comments > .new-comment input{
 	width: 100%;
 /* 	min-height: 170px; */
-	padding: 5px;
+	padding: .5em;
 	resize: vertical;
 	border: solid 1px #D6D6D6;
+	margin-bottom: .5em;
 }
 #content .post > .comments > .new-comment textarea{
 	width: 100%;
 	min-height: 170px;
-	padding: 5px;
+	padding: .5em;
 	resize: vertical;
 	border: solid 1px #D6D6D6;
 }
@@ -312,9 +307,10 @@ button[disabled]{
 
 #content .post > .comments > .list .comment,
 #content .post > .comments > .list .no-comment{
-	background: #DEDEDE;
-	padding: 15px;
-	margin-bottom: 15px;
+	background: #E7E7E7;
+	border: solid 1px #E0E0E0;
+	padding: 1em;
+	margin-bottom: .5em;
 }
 
 #content .post > .comments > .list .comment > .name{
