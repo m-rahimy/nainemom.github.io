@@ -325,7 +325,8 @@ button[disabled]{
 		padding: 15px;
 	}
 	#content .post > .comments > .new-comment{
-		border-bottom: dotted 5px #D6D6D6;
+		border-bottom: solid 1px #E0E0E0;
+		padding-bottom: 3em;
 	}
 }
 
