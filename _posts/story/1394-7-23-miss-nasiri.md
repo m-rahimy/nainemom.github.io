@@ -1,6 +1,7 @@
 ---
 layout: post
 cat: story
+by: امیر مونیان
 title: خانم نصیری
 ---
 
