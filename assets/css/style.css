@@ -189,22 +189,17 @@ button[disabled]{
 	border-bottom: solid 1px #E0E0E0;
 	margin: 1em 0;
 }
-#content .post > .body q{
-	padding: 30px;
-	margin: 15px 0;
+#content .post > .body blockquote{
+	padding: .5em 1em;
+	margin: 1em;
 	width: 100%;
+	background: rgba(0,0,0,.02);
 	display: block;
-	border-radius: 15px;
+	border: solid 1px #E0E0E0;
 	text-align: justify;
 }
-#content .post > .body q:before{
-	font-family: fontello;
-	content: '\e815';
-	margin: 0 10px;
-	display: inline-block;
-	vertical-align: middle;
-	
-}
+
+
 #content .post > .body .read-more{
 	color: #B10802;
 }
