@@ -47,10 +47,10 @@ layout: default
 		</form>
 		<div class="list">
 			<div id="comment-list">
-				{% for comment in site.data.comments.sessions %}
+				{% for comment in site.data.comments.sessions reversed %}
 					{% if comment.post == page.id %}
 						<div class="comment">
-							<span class="name"> {{ comment.name }} </span>
+							<span class="name{% if comment.name == '0013' %} me{% endif %}"> {% if comment.name == '0013' %}امیر{% else %}{{ comment.name }}{% endif %} </span>
 							<span class="body"> {{ comment.body }} </span>
 						</div>
 					{% endif %}

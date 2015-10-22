@@ -290,6 +290,9 @@ button[disabled]{
 	float: right;
 	margin-left: 5px;
 }
+#content .post > .comments > .list .comment > .name.me{
+	color: #B10802;
+}
 #content .post > .comments > .list .comment > .name:after{
 	content: ': ';
 }
