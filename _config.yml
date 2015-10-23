@@ -1,5 +1,5 @@
 name: مرده
-description: مکانی برای تخلیه فکر
+description: تصور کن که زندگی‌ات در تخیلات یک مگس مرده است.
 avatar: x.png
 dribbble:
 email: nainemom@gmail.com
@@ -13,7 +13,7 @@ rss: # just type anything here for a working RSS icon, make sure you set the "ur
 twitter: nainemom
 stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 youtube: # channel/<your_long_string> or user/<user-name>
-googleplus: # anything in your profile username that comes after plus.google.com/
+googleplus: https://plus.google.com/112493209961701185664/posts # anything in your profile username that comes after plus.google.com/
 
 
 pooleapp_apikey: 676390e8-66af-442f-b9a8-9ab5b2899bc9

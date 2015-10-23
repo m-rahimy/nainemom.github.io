@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title> {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
 	{% include meta.html %}
 	{% include analytics.html %}
-	
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -14,7 +12,7 @@
 	<link href="/assets/fontello/css/fontello.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="/feed.xml" />
-	
+	<title> {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
 </head>
 <body>
 	<header id="header">
