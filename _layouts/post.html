@@ -21,33 +21,15 @@ layout: default
 	<div class="body">
 		 {{ content }}
 	</div>
-	<hr/>
+	<br/>
 	<div class="comments">
 		<form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/{{site.pooleapp_apikey}}/">
-			<table>
-				<tr>
-					<td>
-						<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input name="link" placeholder="لینک خود را وارد کنید (اختیاری؛ مثلا www.morde.ir)">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<textarea name="body" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="">
-						<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
-						<input type="hidden" name="post" id="post-id" value="{{page.id}}">
-						<button type="submit" > انتشار </button>
-					</td>
-				</tr>
-			</table>
+			<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
+			<input type="hidden" name="post" id="post-id" value="{{page.id}}">
+			<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
+			<input name="link" placeholder="لینک خود را وارد کنید (اختیاری؛ مثلا www.morde.ir)">
+			<textarea name="body" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
+			<button type="submit" > انتشار </button>
 		</form>
 		<div class="list">
 			<div id="comment-list">
@@ -56,7 +38,7 @@ layout: default
 						<div class="comment">
 							<span class="name{% if comment.name == '0013' %} me{% endif %}">
 								{% if comment.name == '0013' %}
-									امیر
+									<a href="http://morde.ir">امیر</a>
 								{% else %}
 									{% if comment.link %}<a href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
 								{% endif %} 

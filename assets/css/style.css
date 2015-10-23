@@ -21,6 +21,7 @@
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 *:not(input):not(textarea){
     -webkit-user-select: none;
@@ -179,7 +180,7 @@ button[disabled]{
 #content > .post > .body{
 	font-size: 0.875em;
 	line-height: 25pt;
-	padding: .3em 1em 1em 1em;
+	padding: .3em 1em;
 	color: #505050;
 }
 #content > .post > .body br{
@@ -188,26 +189,40 @@ button[disabled]{
 }
 #content > .post  hr{
 	border: none;
-	border-bottom: solid 1px #E0E0E0;
+	border-bottom: solid 1px #D3D3D3;
 	margin: 1em 0;
 }
 #content .post > .body blockquote{
-	padding: .5em 1em;
-	margin: 1em;
-	width: 100%;
-	background: rgba(0,0,0,.02);
+	padding: 1em 2em;
+	margin: 1em 0;
+	font-size: .9em;
 	display: block;
-	border: solid 1px #E0E0E0;
+	text-align: center;
+	color: #676767;
+	
+}
+#content .post > .body blockquote:before,
+#content .post > .body blockquote:after{
+	font-family: fontello;
+	display: inline;
+	vertical-align: super;
+	font-size: .9em;
+	margin: 0 .7em;
+}
+#content .post > .body blockquote:before{
+	content: '\e809';
+}
+#content .post > .body blockquote:after{
+	content: '\e800';
+}
+
+#content .post > .body blockquote p{
+	display: inline;
 	text-align: justify;
 }
 
-
 #content .post > .body .read-more{
 	color: #B10802;
-}
-
-#content .post > .body .read-more:after{
-	content: '...';
 }
 
 #content .post > .body p,
@@ -226,7 +241,7 @@ button[disabled]{
 }
 #content .post > .comments{
 	width: 100%;
-	padding: 1em .5em;
+	padding: .5em .5em 0em .5em;
 	overflow: visible;
 	height: auto;
 }
@@ -234,7 +249,7 @@ button[disabled]{
 #content .post > .comments > .new-comment,
 #content .post > .comments > .list{
 	width: 50%;
-	padding: 7.5px;
+	padding: 1em;
 	font-size: 11pt;
 }
 #content .post > .comments > .new-comment{
@@ -243,48 +258,35 @@ button[disabled]{
 #content .post > .comments > .list{
 	float: left;
 }
-#content .post > .comments > .new-comment h5,
-#content .post > .comments > .list h5{
-	display: block;
-	color: #757575;
-	padding-top: 7.5px;
-	margin-bottom: 15px;
-	font-weight: normal;
-}
 
 
-
-
-#content .post > .comments > .new-comment > table{
-	width: 100%;
-}
+#content .post > .comments > .new-comment textarea,
 #content .post > .comments > .new-comment input{
+	display: block;
 	width: 100%;
 	padding: .5em;
-	resize: vertical;
-	border: solid 1px #D6D6D6;
+	border: solid 1px #D3D3D3;
 	margin-bottom: .5em;
 }
+
 #content .post > .comments > .new-comment textarea{
-	width: 100%;
 	min-height: 170px;
-	padding: .5em;
 	resize: vertical;
-	border: solid 1px #D6D6D6;
 }
-#content .post > .comments > .new-comment > table button{
+#content .post > .comments > .new-comment button{
 	float: left;
 }
 
 #content .post > .comments > .list .comment,
 #content .post > .comments > .list .no-comment{
-	background: #E7E7E7;
-	border: solid 1px #E0E0E0;
+	background: #E6E6E6;
+	border: solid 1px #D3D3D3;
 	padding: 1em;
 	margin-bottom: .5em;
 }
 #content .post > .comments > .list .comment a{
 	font-weight: bold;
+	color: inherit;
 }
 #content .post > .comments > .list .comment > .name{
 	color: #276D7D;
@@ -327,8 +329,7 @@ button[disabled]{
 		padding: 15px;
 	}
 	#content .post > .comments > .new-comment{
-		border-bottom: solid 1px #E0E0E0;
-		padding-bottom: 3em;
+		padding-bottom: 4em;
 	}
 	#content > .post{
 		border-left: none;
