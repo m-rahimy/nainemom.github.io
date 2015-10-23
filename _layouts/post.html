@@ -27,13 +27,17 @@ layout: default
 			<table>
 				<tr>
 					<td>
-						<input name="name" placeholder="نام خود را وارد کنید" required></textarea>
+						<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
 					</td>
 				</tr>
 				<tr>
-
 					<td>
-						<textarea name="body" placeholder="چیزی بنویسید..." required></textarea>
+						<input name="link" placeholder="لینک خود را وارد کنید (اختیاری؛ مثلا www.morde.ir)">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea name="body" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -50,7 +54,16 @@ layout: default
 				{% for comment in site.data.comments.sessions reversed %}
 					{% if comment.post == page.id %}
 						<div class="comment">
-							<span class="name{% if comment.name == '0013' %} me{% endif %}"> {% if comment.name == '0013' %}امیر{% else %}{{ comment.name }}{% endif %} </span>
+							<span class="name{% if comment.name == '0013' %} me{% endif %}">
+								{% if comment.name == '0013' %}
+									امیر
+								{% else %}
+									{% if comment.link %}<a href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
+								{% endif %} 
+							</span>
+							
+							 
+							
 							<span class="body"> {{ comment.body }} </span>
 						</div>
 					{% endif %}

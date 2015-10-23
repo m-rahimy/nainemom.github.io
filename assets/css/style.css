@@ -283,7 +283,9 @@ button[disabled]{
 	padding: 1em;
 	margin-bottom: .5em;
 }
-
+#content .post > .comments > .list .comment a{
+	font-weight: bold;
+}
 #content .post > .comments > .list .comment > .name{
 	color: #276D7D;
 	font-weight: bold;
