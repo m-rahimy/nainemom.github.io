@@ -150,7 +150,7 @@ button[disabled]{
 	margin: 1em auto;
 	max-width: 1024px;
 	display: block;
-	padding: 1em;
+	padding: 1em .5em;
 	background: #F0F0F0;
 	border: solid 1px #D3D3D3;
 }
@@ -169,14 +169,19 @@ button[disabled]{
 	margin-bottom: .4em;
 }
 #content > .post > .header > .by,
-#content > .post > .header > .date{
+#content > .post > .header > .date,
+#content > .post > .header > .tags{
 	color: #676767;
 	font-weight: normal;
-	margin-left: 1em;
+	margin-left: 1.2em;
 	display: inline;
 }
-
-	
+#content > .post > .header > .tags a{
+	margin-left: .5em;
+}
+#content > .post > .header > .tags a:not(:last-child):after{
+	content: '،';
+}
 #content > .post > .body{
 	font-size: 0.875em;
 	line-height: 25pt;

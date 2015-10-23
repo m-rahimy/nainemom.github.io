@@ -16,6 +16,12 @@ layout: default
 			{% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %}
 			{% assign y = page.date | date: "%-y" %}{% case y %}{% when '94' %}۹۴{% when '95' %}۹۵{% when '96' %}۹۶{% when '97' %}۹۷{% when '98' %}۹۸{% when '99' %}۹۹{% when '00' %}۰۰{% endcase %}
 		</h6>
+		<h6 class="tags">
+			<i class="icon icon-tags"></i>
+			{% for tag in page.tags %}
+				<a href="https://www.google.com/webhp?#q={{tag}}+site:{{ site.url }}" rel="tag">{{tag}}</a> 
+			{% endfor %}
+		</h6>
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
