@@ -3,16 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	{% include meta.html %}
-	{% include analytics.html %}
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<link href="/assets/css/cssreset.css" rel="stylesheet">	
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-	<link href="/assets/fontello/css/fontello.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="all" href="/assets/css/style.css" />
+	<link href="/assets/fontello/css/fontello.css" media="all" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="/feed.xml" />
-	<title> {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
+	<title> {{ site.name }} – {% if page.title %}{{ page.title }}{% else %}{{ description_min }}{% endif %} </title>
+	
+	
 </head>
 <body>
 	<header id="header">
@@ -37,5 +38,6 @@
 	
 	<footer id="footer">
 	</footer>
+	{% include analytics.html %}
 </body>
 
