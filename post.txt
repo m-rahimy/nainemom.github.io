@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<input type="hidden" id="srv_tmp_url" value="http://s200.uploadboy.com/tmp">
+	<input type="hidden" name="sess_id" value="odhsn61ci1fjoefg">
+	<input type="hidden" name="utype" value="reg">
+	<textarea name="url_mass"></textarea>
+	<button id="uploadbtn">Upload</button>
+
+	<script>
+/*		$('#uploadbtn').click(function(){
+			$.ajax({
+				method: 'POST',
+				data: {
+					srv_tmp_url: 'http://s200.uploadboy.com/tmp',
+					sess_id: 'odhsn61ci1fjoefg',
+					utype: 'reg',
+					url_mass: $('[name=url_mass]').val()
+				},
+				onSuccess: function(e){
+					
+				}
+				
+			});
+		}); */
+		
+		document.getElementById('uploadbtn').onclick = function(e){
+			xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function(){
+				if( xmlhttp.readyState==4 && xmlhttp.status==200){
+					alert( xmlhttp.responseText );
+				}
+			}
+			xmlhttp.open('POST', 'http://s61.uploadboy.com/cgi-bin/upload.cgi?upload_type=url');
+			xmlhttp.send();
+		}
+	</script>
+</body>
+</html>
