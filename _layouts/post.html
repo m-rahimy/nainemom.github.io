@@ -44,9 +44,9 @@ layout: default
 						<div class="comment">
 							<span class="name{% if comment.name == '0013' %} me{% endif %}">
 								{% if comment.name == '0013' %}
-									<a href="http://morde.ir">امیر</a>
+									امیر
 								{% else %}
-									{% if comment.link %}<a href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
+									{% if comment.link %}<a target="_blank" href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
 								{% endif %} 
 							</span>
 							

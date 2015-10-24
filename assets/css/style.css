@@ -35,7 +35,7 @@ html, body{
 	width: 100%;
 	min-height: 100%;
 	background: #E6E6E6;
-	font-size: 15pt;
+	font-size: 14pt;
 	line-height: 22pt;
 	color: #505050;
 	direction: rtl;
@@ -148,7 +148,7 @@ button[disabled]{
 }
 #content > .post{
 	margin: 1em auto;
-	max-width: 1024px;
+	max-width: 960px;
 	display: block;
 	padding: 1em .5em;
 	background: #F0F0F0;
@@ -195,7 +195,8 @@ button[disabled]{
 #content > .post  hr{
 	border: none;
 	border-bottom: solid 1px #D3D3D3;
-	margin: 1em 0;
+	width: 65%;
+	margin: 2.5em auto;
 }
 #content .post > .body blockquote{
 	padding: 1em 2em;
@@ -212,13 +213,16 @@ button[disabled]{
 	display: inline;
 	vertical-align: super;
 	font-size: .9em;
-	margin: 0 .7em;
 }
 #content .post > .body blockquote:before{
 	content: '\e809';
+	padding-left: .7em;
+	margin-right: -1.7em;
 }
 #content .post > .body blockquote:after{
 	content: '\e800';
+	padding-right: .7em;
+	margin-left: -1.7em;
 }
 
 #content .post > .body blockquote p{
