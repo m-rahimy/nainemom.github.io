@@ -55,10 +55,32 @@ layout: default
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			data = JSON.parse( xhttp.responseText );
-			console.log( data );
+			var list = document.getElementById('comment-list');
+			var cm, nm, ln, bd;
+			for( var i = 0; i < data.length; i++ ){
+				cm = document.createElement('div');
+				cm.classList.add('comment');
+				
+				nm = document.createElement('span');
+				nm.classList.add('name');
+				
+				ln = document.createElement('a');
+				ln.classList.add('name');
+				ln.setAttribute('target', '_blank');
+				ln.setAttribute('href', data[i].link);
+				ln.innerHTML = data[i].name;
+				
+				bd = document.createElement('span');
+				bd.classList.add('body');
+				bd.innerHTML = data[i].body;
+				
+				nm.appendChild( ln );
+				cm.appendChild( nm );
+				cm.appendChild( bd );
+				list.appendChild( cm );
+			}
 		}
 	}
 	xhttp.open("POST", "http://morde.net84.net/?oper=fetch&post={{page.id}}", true);
-	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 	xhttp.send();
 </script>
