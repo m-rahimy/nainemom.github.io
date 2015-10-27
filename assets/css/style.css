@@ -258,6 +258,14 @@ button[disabled]{
 	cursor: not-allowed;
 	opacity: .3;
 }
+#content .post > .comments.disabled *{
+	cursor: not-allowed;
+}
+
+#_oss_container{
+	display: none;
+}
+
 #content .post > .comments > .new-comment,
 #content .post > .comments > .list{
 	width: 50%;
