@@ -50,4 +50,8 @@ layout: default
 	getComments('{{page.id}}', function(data){
 		commentsToLayout('comment-list', data['response']);
 	});
+	if( document.location.toString().indexOf('#comment_success') > 0 ){
+		window.history.pushState('', 'Title', '#');
+		alert('کامنت شما ثبت شد و اگر در آن فحش نداده باشید، احتمالا در مدت کوتاهی به نمایش در می‌آید.');
+	}
 </script>
