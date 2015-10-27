@@ -40,28 +40,13 @@ layout: default
 		</form>
 		<div class="list">
 			<div id="comment-list">
-				{% for comment in site.data.comments.sessions reversed %}
-					{% if comment.post == page.id %}
-						<div class="comment">
-							<span class="name{% if comment.name == '0013' %} me{% endif %}">
-								{% if comment.name == '0013' %}
-									امیر
-								{% else %}
-									{% if comment.link %}<a target="_blank" href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
-								{% endif %} 
-							</span>
-							<span class="body"> {{ comment.body }} </span>
-						</div>
-					{% endif %}
-				{% endfor %}
 			</div>
 		</div>
 		<div class="clear-both"></div>
 	</div>
 </article>
 <script>
-	if( document.location.toString().indexOf('#comment_success') > 0 ){
-		window.history.pushState('', 'Title', '#');
-		alert('کامنت شما ثبت شد و اگر در آن فحش نداده باشید، احتمالا در مدت کوتاهی به نمایش در می‌آید.');
-	}
+	getComments('{{page.id}}', function(data){
+		commentsToLayout('comment-list', data['response']);
+	});
 </script>
