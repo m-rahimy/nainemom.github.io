@@ -13,6 +13,7 @@ function getComments( postId, callback ){
 function commentsToLayout( sectionId, comments ){
 	var cm, nm, ln, bd;
 	var section = document.getElementById(sectionId);
+	section.innerHTML = '';
 	for( var i = 0; i < comments.length; i++ ){
 		cm = document.createElement('div');
 		cm.classList.add('comment');
