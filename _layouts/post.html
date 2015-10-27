@@ -52,6 +52,7 @@ layout: default
 </article>
 <script>
 	var xhttp = new XMLHttpRequest();
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			data = JSON.parse( xhttp.responseText );
