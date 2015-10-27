@@ -58,7 +58,7 @@ layout: default
 			console.log( data );
 		}
 	}
-	xhttp.open("POST", "http://morde.net84.net", true);
+	xhttp.open("POST", "http://morde.net84.net/?oper=fetch&post={{page.id}}", true);
 	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-	xhttp.send("oper=fetch&post={{page.id}}");
+	xhttp.send();
 </script>
