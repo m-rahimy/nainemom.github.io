@@ -28,9 +28,10 @@ layout: default
 		{{ content }}
 	</div>
 	<br/>
-	<div class="comments">
-		<form class="new-comment" id="new-comment" method="post" action="http://morde.net84.net/?oper=add&post={{page.id}}">
-			<input type="hidden" name="redirect_to" value="{{page.url}}">
+	<div class="comments disabled" title="این بخش فعلا به دلیل مسخره‌بازی سرور pooleapp.com، قابل استفاده نمی‌باشد.">
+		<form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/{{site.pooleapp_apikey}}/">
+			<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
+			<input type="hidden" name="post" id="post-id" value="{{page.id}}">
 			<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
 			<input name="link" placeholder="لینک خود را وارد کنید (اختیاری؛ مثلا www.morde.ir)">
 			<textarea name="body" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
@@ -38,48 +39,28 @@ layout: default
 		</form>
 		<div class="list">
 			<div id="comment-list">
-				<div class="comment">
-					<span class="name me">
-						<a target="_blank" href="{{LINK}}">{{NAME}}</a>
-					</span>
-					<span class="body">{{BODY}}</span>
-				</div>
+				{% for comment in site.data.comments.sessions reversed %}
+					{% if comment.post == page.id %}
+						<div class="comment">
+							<span class="name{% if comment.name == '0013' %} me{% endif %}">
+								{% if comment.name == '0013' %}
+									امیر
+								{% else %}
+									{% if comment.link %}<a target="_blank" href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
+								{% endif %} 
+							</span>
+							<span class="body"> {{ comment.body }} </span>
+						</div>
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 		<div class="clear-both"></div>
 	</div>
 </article>
 <script>
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			data = JSON.parse( xhttp.responseText );
-			var list = document.getElementById('comment-list');
-			var cm, nm, ln, bd;
-			for( var i = 0; i < data.length; i++ ){
-				cm = document.createElement('div');
-				cm.classList.add('comment');
-				
-				nm = document.createElement('span');
-				nm.classList.add('name');
-				
-				ln = document.createElement('a');
-				ln.classList.add('name');
-				ln.setAttribute('target', '_blank');
-				ln.setAttribute('href', data[i].link);
-				ln.innerHTML = data[i].name;
-				
-				bd = document.createElement('span');
-				bd.classList.add('body');
-				bd.innerHTML = data[i].body;
-				
-				nm.appendChild( ln );
-				cm.appendChild( nm );
-				cm.appendChild( bd );
-				list.appendChild( cm );
-			}
-		}
+	if( document.location.toString().indexOf('#comment_success') > 0 ){
+		window.history.pushState('', 'Title', '#');
+		alert('کامنت شما ثبت شد و اگر در آن فحش نداده باشید، احتمالا در مدت کوتاهی به نمایش در می‌آید.');
 	}
-	xhttp.open("POST", "http://morde.net84.net/?oper=fetch&post={{page.id}}", true);
-	xhttp.send();
 </script>

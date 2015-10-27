@@ -254,7 +254,10 @@ button[disabled]{
 	overflow: visible;
 	height: auto;
 }
-
+#content .post > .comments.disabled{
+	cursor: not-allowed;
+	opacity: .3;
+}
 #content .post > .comments > .new-comment,
 #content .post > .comments > .list{
 	width: 50%;
