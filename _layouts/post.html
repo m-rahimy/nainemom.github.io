@@ -30,6 +30,7 @@ layout: default
 	<br/>
 	<div class="comments">
 		<form class="new-comment" id="new-comment" method="post" action="http://morde.net84.net/nai_comment.php">
+			<input type="hidden" name="oper" value="add">
 			<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
 			<input type="hidden" name="post" id="post-id" value="{{page.id}}">
 			<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
