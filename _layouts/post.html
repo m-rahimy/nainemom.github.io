@@ -29,9 +29,9 @@ layout: default
 	</div>
 	<br/>
 	<div class="comments">
-		<form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/{{site.pooleapp_apikey}}/">
-			<input type="hidden" name="redirect_to" value="{{page.url}}#comment_success">
-			<input type="hidden" name="post" id="post-id" value="{{page.id}}">
+		<form class="new-comment" id="new-comment" method="post" action="http://morde.net84.net">
+			<input type="hidden" name="redirect_to" value="{{page.url}}">
+			<input type="hidden" name="post" value="{{page.id}}">
 			<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
 			<input name="link" placeholder="لینک خود را وارد کنید (اختیاری؛ مثلا www.morde.ir)">
 			<textarea name="body" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
@@ -39,31 +39,27 @@ layout: default
 		</form>
 		<div class="list">
 			<div id="comment-list">
-				{% for comment in site.data.comments.sessions reversed %}
-					{% if comment.post == page.id %}
-						<div class="comment">
-							<span class="name{% if comment.name == '0013' %} me{% endif %}">
-								{% if comment.name == '0013' %}
-									امیر
-								{% else %}
-									{% if comment.link %}<a target="_blank" href="//{{comment.link}}">{% endif %}{{ comment.name }}{% if comment.link %}</a>{% endif %}
-								{% endif %} 
-							</span>
-							
-							 
-							
-							<span class="body"> {{ comment.body }} </span>
-						</div>
-					{% endif %}
-				{% endfor %}
+				<div class="comment">
+					<span class="name me">
+						<a target="_blank" href="{{LINK}}">{{NAME}}</a>
+					</span>
+					<span class="body">{{BODY}}</span>
+				</div>
 			</div>
 		</div>
 		<div class="clear-both"></div>
 	</div>
 </article>
 <script>
-	if( document.location.toString().indexOf('#comment_success') > 0 ){
-		window.history.pushState('', 'Title', '#');
-		alert('کامنت شما ثبت شد و اگر در آن فحش نداده باشید، احتمالا در مدت کوتاهی به نمایش در می‌آید.');
+	function loadComments() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				data = JSON.parse( xhttp.responseText );
+				console.log( data );
+			}
+		}
+		xhttp.open("POST", "http://morde.net84.net", true);
+		xhttp.send("oper=fetch&post={{page.id}}");
 	}
 </script>
