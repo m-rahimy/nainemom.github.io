@@ -2,7 +2,7 @@
 layout: post
 cat: story
 by: امیر مومنیان
-title: من این‌کاره نیستم!
+title: من این‌کاره نیستم
 tags:
 - مترو
 - داستان
