@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 	{% if post.cat == "story" %}
 		<article class="post">
 			<div class="header">
@@ -33,3 +33,9 @@ layout: default
 		</article>
 	{% endif %}
 {% endfor %}
+
+<div class="pagination">
+	{% if paginator.previous_page %}<a class="" href="{{ paginator.previous_page_path }}"><i class="icon icon-right-open"></i> داستان‌های جدیدتر </a>{% endif %}
+	{% if paginator.previous_page %} {%if paginator.next_page %} <span class="sep"></span> {% endif %}{% endif %}
+	{% if paginator.next_page %}<a class="olderpage" href="{{ paginator.next_page_path }}">داستان‌های قدیمی‌تر <i class="icon icon-left-open"></i> </a>{% endif %}
+</div>
