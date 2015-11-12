@@ -2,7 +2,7 @@
 layout: post
 cat: story
 by: امیر مومنیان
-title: بیمارستان
+title: پیمارستان
 tags:
 - بیمارستان
 - تخیل
