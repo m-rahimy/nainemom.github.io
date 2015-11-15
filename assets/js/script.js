@@ -28,7 +28,9 @@ function commentsToLayout( sectionId, comments ){
 			ln = document.createElement('a');
 			ln.classList.add('name');
 			ln.setAttribute('target', '_blank');
-			ln.setAttribute('href', '//'+comments[i].link);
+			if ( comments[i].link.indexOf('http://') != 0 && comments[i].link.indexOf('https://') != 0 )
+				comments[i].link = 'http://' + comments[i].link;
+			ln.setAttribute('href', comments[i].link);
 			ln.innerHTML = comments[i].name;
 			nm.appendChild( ln );
 		}
@@ -42,4 +44,15 @@ function commentsToLayout( sectionId, comments ){
 		cm.appendChild( bd );
 		section.appendChild( cm );
 	}
+}
+
+
+function isUrl(url) {
+	if( typeof url != 'string' || url == null ) url = '';
+	var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+	var regex = new RegExp(expression);
+	if ( url.match(regex) )
+		return true;
+	else
+		return false;
 }

@@ -33,8 +33,9 @@ layout: default
 			<input type="hidden" name="oper" value="add">
 			<input type="hidden" name="redirect_to" value="{{site.url}}{{page.url}}#comment_success">
 			<input type="hidden" name="post" id="post-id" value="{{page.id}}">
-			<input name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
-			<input name="link" placeholder="لینک خود را وارد کنید (اختیاری؛ مثلا www.morde.ir)">
+			<input type="text" name="name" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
+			<span id="add-comment-link" class="add-comment-link"> اضافه کردن لینک </span> 
+			<input type="hidden" id="comment-link" name="link">
 			<textarea name="body" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
 			<button type="submit" > انتشار </button>
 		</form>
@@ -50,8 +51,24 @@ layout: default
 	getComments('{{page.id}}', function(data){
 		commentsToLayout('comment-list', data['response']);
 	});
+	var commentLink = document.getElementById('comment-link');
+	var addCommentLink = document.getElementById('add-comment-link');
+	addCommentLink.onclick = function(e){
+		var oldLink = commentLink.value;
+		var newLink = prompt('اگر صفحه‌ای دارید که دوست دارید کامنت شما به آن لینک شود، اینجا وارد کنید.', oldLink);
+		if( typeof newLink == 'string' ){
+			if( newLink != '' ){
+				if( !isUrl(newLink) )
+					return false;
+				this.innerHTML = 'تغییر لینک';
+			}
+			else
+				this.innerHTML = 'اضافه کردن لینک';
+			commentLink.value = newLink;
+		}
+	}
 	if( document.location.toString().indexOf('#comment_success') > 0 ){
 		window.history.pushState('', 'Title', '#');
-		alert('کامنت شما ثبت شد و اگر در آن فحش نداده باشید، احتمالا در مدت کوتاهی به نمایش در می‌آید.');
+		alert('کامنت شما ثبت شد و قول می‌دهم اگر در آن حرف رکیک نباشد، به زودی به نمایش در می‌آید.');
 	}
 </script>
