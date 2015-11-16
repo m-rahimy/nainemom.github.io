@@ -47,10 +47,9 @@ layout: default
 		<div class="clear-both"></div>
 	</div>
 </article>
+<script src="http://morde.net84.net/posts{{page.id}}.js"></script>
 <script>
-	getComments('{{page.id}}', function(data){
-		commentsToLayout('comment-list', data['response']);
-	});
+	commentsToLayout('comment-list', comments);
 	var commentLink = document.getElementById('comment-link');
 	var addCommentLink = document.getElementById('add-comment-link');
 	addCommentLink.onclick = function(e){
