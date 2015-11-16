@@ -1,16 +1,3 @@
-function getComments( postId, callback ){
-	var comments_url = 'http://morde.net84.net/posts'+ postId+'.json';
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			data = JSON.parse( xhttp.responseText );
-			callback( data );
-		}
-	}
-	xhttp.open("GET", comments_url, true);
-	xhttp.setRequestHeader("Content-type", "application/json");
-	xhttp.send();
-}
 function commentsToLayout( sectionId, comments ){
 	var cm, nm, ln, bd;
 	var section = document.getElementById(sectionId);
