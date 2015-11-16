@@ -1,5 +1,5 @@
 function getComments( postId, callback ){
-	var comments_url = 'http://morde.net84.net/nai_comment.php?oper=fetch&post='+ postId;
+	var comments_url = 'http://morde.net84.net/posts'+ postId+'.json';
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
