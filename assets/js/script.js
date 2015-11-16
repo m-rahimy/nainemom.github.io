@@ -8,6 +8,7 @@ function getComments( postId, callback ){
 		}
 	}
 	xhttp.open("GET", comments_url, true);
+	xhttp.setRequestHeader("Content-type", "application/json");
 	xhttp.send();
 }
 function commentsToLayout( sectionId, comments ){
