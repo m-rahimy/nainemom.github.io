@@ -29,8 +29,7 @@ layout: default
 	</div>
 	<br/>
 	<div class="comments">
-		<<form class="new-comment" id="new-comment" method="post" action="http://nainemom.ir/comments/index.php">
-		<!--form class="new-comment" id="new-comment" method="post" action="http://pooleapp.com/stash/cd621410-fab9-4f94-98a0-d70a02d958c1/" -->
+		<form class="new-comment" id="new-comment" method="post" action="http://nainemom.ir/comments/index.php">
 			<input type="hidden" name="operation" value="add">
 			<input type="hidden" name="data[redirect_to]" value="{{site.url}}{{page.url}}#comment_success">
 			<input type="hidden" name="data[post]" id="post-id" value="{{page.id}}">
@@ -38,7 +37,7 @@ layout: default
 			<span id="add-comment-link" class="add-comment-link"> اضافه کردن لینک </span> 
 			<input type="hidden" id="comment-link" name="data[link]">
 			<textarea name="data[body]" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
-			<button type="submit" > انتشار </button>
+			<button type="submit"> انتشار </button>
 		</form>
 		<div class="list">
 			<div id="comment-list">
