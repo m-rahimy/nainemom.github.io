@@ -48,9 +48,12 @@ layout: default
 		<div class="clear-both"></div>
 	</div>
 </article>
-<script src="http://morde.net84.net/posts{{page.id}}.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-	commentsToLayout('comment-list', comments);
+	$.getJSON('http://morde.net84.net/posts{{page.id}}.json', function(comments){
+		commentsToLayout('comment-list', comments);
+	});
 	var commentLink = document.getElementById('comment-link');
 	var addCommentLink = document.getElementById('add-comment-link');
 	addCommentLink.onclick = function(e){
