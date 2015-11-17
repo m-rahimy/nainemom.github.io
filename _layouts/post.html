@@ -29,7 +29,7 @@ layout: default
 	</div>
 	<br/>
 	<div class="comments">
-		<form class="new-comment" id="new-comment" method="post" action="http://nainemom.ir/comments/index.php">
+		<form class="new-comment" id="new-comment" method="post" action="{{site.commenturl}}index.php">
 			<input type="hidden" name="operation" value="add">
 			<input type="hidden" name="data[redirect_to]" value="{{site.url}}{{page.url}}#comment_success">
 			<input type="hidden" name="data[post]" id="post-id" value="{{page.id}}">
@@ -50,7 +50,7 @@ layout: default
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-	$.getJSON('http://nainemom.ir/comments/posts{{page.id}}.json', function(comments){
+	$.getJSON('{{site.commenturl}}cached{{page.id}}.json', function(comments){
 		commentsToLayout('comment-list', comments);
 	});
 	var commentLink = document.getElementById('comment-link');
