@@ -22,6 +22,10 @@ layout: default
 				<a href="https://www.google.com/webhp?#q={{tag}}+site:{{ site.url }}" rel="tag">{{tag}}</a> 
 			{% endfor %}
 		</h6>
+		<h6 class="tags">
+			<i class="icon icon-eye"></i>
+			<span id="reads-count"><div class="loading"></div></span>
+		</h6>
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
@@ -49,8 +53,9 @@ layout: default
 </article>
 
 <script>
-	loadJSON('{{site.commenturl}}cached{{page.id}}.json', function(comments){
-		commentsToLayout('comment-list', comments);
+	loadJSON('{{site.commenturl}}index.php?operation=fetch&data[post]={{page.id}}', function(data){
+		commentsToLayout('comment-list', data.response.comments);
+		document.getElementById('reads-count').innerHTML = traverse(data.response.reads)+ ' بار';
 	});
 	var commentLink = document.getElementById('comment-link');
 	var addCommentLink = document.getElementById('add-comment-link');

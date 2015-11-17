@@ -13,21 +13,15 @@
       "src": "fontawesome"
     },
     {
-      "uid": "d73eceadda1f594cec0536087539afbf",
-      "css": "heart",
-      "code": 59410,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "f3dc2d6d8fe9cf9ebff84dc260888cdf",
-      "css": "heart-empty",
-      "code": 59411,
-      "src": "fontawesome"
-    },
-    {
       "uid": "8b80d36d4ef43889db10bc1f0dc9a862",
       "css": "user",
       "code": 59395,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c5fd349cbd3d23e4ade333789c29c729",
+      "css": "eye",
+      "code": 59412,
       "src": "fontawesome"
     },
     {

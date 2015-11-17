@@ -17,5 +17,4 @@
 .icon-calendar-empty:before { content: '\e80f'; } /* '' */
 .icon-left-open:before { content: '\e810'; } /* '' */
 .icon-right-open:before { content: '\e811'; } /* '' */
-.icon-heart:before { content: '\e812'; } /* '' */
-.icon-heart-empty:before { content: '\e813'; } /* '' */
+.icon-eye:before { content: '\e814'; } /* '' */

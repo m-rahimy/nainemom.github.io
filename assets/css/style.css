@@ -183,14 +183,13 @@ button[disabled], .likebutton[disabled]{
 #content > .post > .header > .title{
 	color: #276D7D;
 	margin-bottom: .4em;
+	line-height: 1.4em;
 }
-#content > .post > .header > .by,
-#content > .post > .header > .date,
-#content > .post > .header > .tags{
+#content > .post > .header > h6{
 	color: #676767;
 	font-weight: normal;
 	margin-left: 1.2em;
-	display: inline;
+	display: inline-block;
 }
 #content > .post > .header > .tags a{
 	margin-left: .5em;
@@ -353,12 +352,12 @@ button[disabled], .likebutton[disabled]{
 	content: ': ';
 }
 
-#content .post > .comments > .list .loading{
+.loading{
     background: url('../../images/loading.gif') no-repeat right center;
     color: #276D7D;
     width: 16px;
     height: 16px;
-    margin: 0 auto;
+	display: inline-block;
 }
 
 #footer {

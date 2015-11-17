@@ -57,3 +57,13 @@ function loadJSON(path, success, error){
 	xhr.open("GET", path, true);
 	xhr.send();
 }
+
+
+function traverse(str){
+	var persian = {0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+	var list = str.match(/[0-9]/g);
+	if( list != null && list.length > 0 )
+		for( i=0; i<list.length; i++ )
+			str = str.replace(list[i],persian[list[i]]);
+	return str;
+}
