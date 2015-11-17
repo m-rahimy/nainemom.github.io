@@ -48,9 +48,8 @@ layout: default
 	</div>
 </article>
 
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-	$.getJSON('{{site.commenturl}}cached{{page.id}}.json', function(comments){
+	loadJSON('{{site.commenturl}}cached{{page.id}}.json', function(comments){
 		commentsToLayout('comment-list', comments);
 	});
 	var commentLink = document.getElementById('comment-link');
