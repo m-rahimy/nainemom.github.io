@@ -190,6 +190,7 @@ button[disabled], .likebutton[disabled]{
 	font-weight: normal;
 	margin-left: 1.2em;
 	display: inline-block;
+	min-width: 85px;
 }
 #content > .post > .header > .tags a{
 	margin-left: .5em;
