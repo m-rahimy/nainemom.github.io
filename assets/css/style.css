@@ -229,15 +229,15 @@ button[disabled], .likebutton[disabled]{
 	vertical-align: super;
 	font-size: .9em;
 }
-#content .post > .body blockquote:before{
+#content .post > .body blockquote::before{
 	content: '\e809';
-/* 	padding-left: .7em;
-	margin-right: -1.7em; */
+ 	margin-right: .7em;
+	/*margin-right: -1.7em; */
 }
-#content .post > .body blockquote:after{
+#content .post > .body blockquote::after{
 	content: '\e800';
-/* 	padding-right: .7em;
-	margin-left: -1.7em; */
+ 	margin-left: .7em;
+	/*margin-left: -1.7em; */
 }
 
 #content .post > .body blockquote p{
