@@ -18,9 +18,6 @@ youtube: # channel/<your_long_string> or user/<user-name>
 googleplus: https://plus.google.com/112493209961701185664/posts # anything in your profile username that comes after plus.google.com/
 
 
-pooleapp_apikey: 676390e8-66af-442f-b9a8-9ab5b2899bc9
-pooleapp_apisecret: 0bdff430-e3a0-4bce-a0a9-0f87cb06abaf
-
 google_analytics: UA-69174123-1
 
 
