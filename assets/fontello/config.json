@@ -119,6 +119,24 @@
       "css": "right-open",
       "code": 59409,
       "src": "fontawesome"
+    },
+    {
+      "uid": "ce06b5805120d0c2f8d60cd3f1a4fdb5",
+      "css": "play",
+      "code": 59410,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "fda731b5a4026685e1a9c7e64228e2b2",
+      "css": "note-beamed",
+      "code": 59411,
+      "src": "entypo"
+    },
+    {
+      "uid": "3o0pu4qbmgvcv8zqb5o3qh8vttzvhpy7",
+      "css": "rss-1",
+      "code": 59413,
+      "src": "typicons"
     }
   ]
 }

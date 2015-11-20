@@ -28,6 +28,11 @@ url: http://morde.ir
 baseurl: #http://127.0.0.1:4000 #http://nainemom.github.io
 commenturl: http://morde.nainemom.ir/
 
+telegram_channel: https://telegram.me/mordeir
+
+
+
+
 paginate: 5
 paginate_path: "/page:num"
 

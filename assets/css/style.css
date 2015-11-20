@@ -154,7 +154,10 @@ button[disabled], .likebutton[disabled]{
 	background: #F0F0F0;
 	border: solid 1px #D3D3D3;
 }
-
+#content > .post.pin{
+	background: #E6E6E6;
+	border: solid 1px #D3D3D3;
+}
 #content > .pagination{
 	text-align: center;
 	font-weight: bold;
