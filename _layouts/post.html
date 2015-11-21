@@ -75,6 +75,7 @@ layout: default
 	}
 	if( document.location.toString().indexOf('#comment_success') > 0 ){
 		window.history.pushState('', 'Title', '#');
+		window.scrollTo(0, document.body.scrollHeight);
 		alert('ممنون از نظرتون. :-)');
 	}
 </script>
