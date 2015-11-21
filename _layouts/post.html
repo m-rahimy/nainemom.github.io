@@ -37,10 +37,10 @@ layout: default
 			<input type="hidden" name="operation" value="add">
 			<input type="hidden" name="data[redirect_to]" value="{{site.url}}{{page.url}}#comment_success">
 			<input type="hidden" name="data[post]" id="post-id" value="{{page.id}}">
-			<input type="text" name="data[name]" placeholder="نام خود را وارد کنید (مثلا کامبیز)" required>
+			<input type="text" name="data[name]" placeholder="نام خود را وارد کنید." required>
 			<span id="add-comment-link" class="add-comment-link"> اضافه کردن لینک </span> 
 			<input type="hidden" id="comment-link" name="data[link]">
-			<textarea name="data[body]" placeholder="چیزی بنویسید... (مثلا خیلی داستان خوبی بود!)" required></textarea>
+			<textarea name="data[body]" placeholder="نظر خود را راجع به این داستان بنویسید." required></textarea>
 			<button type="submit"> انتشار </button>
 		</form>
 		<div class="list">
@@ -75,6 +75,6 @@ layout: default
 	}
 	if( document.location.toString().indexOf('#comment_success') > 0 ){
 		window.history.pushState('', 'Title', '#');
-		alert('کامنت شما ثبت شد و قول می‌دهم اگر در آن حرف رکیک نباشد، به زودی به نمایش در می‌آید.');
+		alert('ممنون از نظرتون. :-)');
 	}
 </script>
