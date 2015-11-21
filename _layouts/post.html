@@ -56,6 +56,14 @@ layout: default
 	loadJSON('{{site.commenturl}}index.php?operation=fetch&data[post]={{page.id}}', function(data){
 		commentsToLayout('comment-list', data.response.comments);
 		document.getElementById('reads-count').innerHTML = traverse(data.response.reads)+ ' بار';
+		
+		if( document.location.toString().indexOf('#comment_success') > 0 ){
+			window.history.pushState('', 'Title', '#');
+			(function() {
+			   window.scrollTo(0, document.body.scrollHeight);
+			})();
+			alert('ممنون از نظرتون. :-)');
+		}
 	});
 	var commentLink = document.getElementById('comment-link');
 	var addCommentLink = document.getElementById('add-comment-link');
@@ -72,10 +80,5 @@ layout: default
 				this.innerHTML = 'اضافه کردن لینک';
 			commentLink.value = newLink;
 		}
-	}
-	if( document.location.toString().indexOf('#comment_success') > 0 ){
-		window.history.pushState('', 'Title', '#');
-		window.scrollTo(0, document.body.scrollHeight);
-		alert('ممنون از نظرتون. :-)');
 	}
 </script>
