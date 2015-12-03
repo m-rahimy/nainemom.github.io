@@ -38,7 +38,7 @@ layout: default
 			<input type="hidden" name="operation" value="add">
 			<input type="hidden" name="data[redirect_to]" value="{{site.url}}{{page.url}}#comment_success">
 			<input type="hidden" name="data[post]" id="post-id" value="{{page.id}}">
-			<input type="text" name="data[name]" placeholder="نام خود را وارد کنید." required>
+			<input type="text" id="comment-name" name="data[name]" placeholder="نام خود را وارد کنید." required>
 			<span id="add-comment-link" class="add-comment-link"> اضافه کردن لینک </span> 
 			<input type="hidden" id="comment-link" name="data[link]">
 			<textarea name="data[body]" placeholder="نظر خود را راجع به این داستان بنویسید." required></textarea>
@@ -54,6 +54,11 @@ layout: default
 </article>
 
 <script>
+	var commentForm = document.getElementById('new-comment');
+	var commentName = document.getElementById('comment-name');
+	var commentLink = document.getElementById('comment-link');
+	var addCommentLink = document.getElementById('add-comment-link');
+	
 	loadJSON('{{site.commenturl}}index.php?operation=fetch&data[post]={{page.id}}', function(data){
 		commentsToLayout('comment-list', data.response.comments);
 		document.getElementById('reads-count').innerHTML = traverse(data.response.reads)+ ' بار';
@@ -66,20 +71,28 @@ layout: default
 			alert('ممنون از نظرتون. :-)');
 		}
 	});
-	var commentLink = document.getElementById('comment-link');
-	var addCommentLink = document.getElementById('add-comment-link');
 	addCommentLink.onclick = function(e){
 		var oldLink = commentLink.value;
 		var newLink = prompt('اگر صفحه‌ای دارید که دوست دارید کامنت شما به آن لینک شود، اینجا وارد کنید.', oldLink);
-		if( typeof newLink == 'string' ){
-			if( newLink != '' ){
-				if( !isUrl(newLink) )
-					return false;
-				this.innerHTML = 'تغییر لینک';
-			}
-			else
-				this.innerHTML = 'اضافه کردن لینک';
+		if( typeof newLink == 'string' && newLink != '' && isUrl(newLink) )
 			commentLink.value = newLink;
+		addLinkInit();
+	}
+	function addLinkInit(){
+		if( commentLink.value == '' )
+			addCommentLink.innerHTML = 'اضافه کردن لینک';
+		else	
+			addCommentLink.innerHTML = 'تغییر لینک';
+	}
+	commentForm.onsubmit = function(e){
+		if( typeof window.localStorage != 'undefined' ){
+			window.localStorage.name = commentName.value;
+			window.localStorage.link = commentLink.value;
 		}
+	}
+	if( typeof window.localStorage != 'undefined' ){
+		commentName.value = window.localStorage.name;
+		commentLink.value = window.localStorage.link;
+		addLinkInit();
 	}
 </script>
