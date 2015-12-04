@@ -12,6 +12,13 @@ layout: default
 				<i class="icon icon-pencil"></i>
 				{{ post.by }}
 			</h6>
+			<h6 class="cat">
+				<i class="icon icon-doc-text-inv"></i>
+				{% case post.cat %}
+				{% when 'story' %} داستان کوتاه
+				{% when 'storing' %} داستان ادامه‌دار
+				{% endcase %}
+			</h6>
 			<h6 class="date">
 				<i class="icon icon-calendar-empty"></i>
 				{% assign d = post.date | date: "%-d" %}{% case d %}{% when '1' %}۱{% when '2' %}۲{% when '3' %}۳{% when '4' %}۴{% when '5' %}۵{% when '6' %}۶{% when '7' %}۷{% when '8' %}۸{% when '9' %}۹{% when '10' %}۱۰{% when '11' %}۱۱{% when '12' %}۱۲{% when '13' %}۱۳{% when '14' %}۱۴{% when '15' %}۱۵{% when '16' %}۱۶{% when '17' %}۱۷{% when '18' %}۱۸{% when '19' %}۱۹{% when '20' %}۲۰{% when '21' %}۲۱{% when '22' %}۲۲{% when '23' %}۲۳{% when '24' %}۲۴{% when '25' %}۲۵{% when '26' %}۲۶{% when '27' %}۲۷{% when '28' %}۲۸{% when '29' %}۲۹{% when '30' %}۳۰{% when '31' %}۳۱{% endcase %}
