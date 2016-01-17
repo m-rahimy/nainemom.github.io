@@ -1,10 +1,10 @@
 ﻿@font-face {
 	font-family: 'IRAN';
-	src: 	url("../font/IRAN.woff") format("woff");  /* IE6–8 */
-	src: 	url("../font/IRAN.eot?#ie6") format("eot"),  /* IE6–8 */
-			url("../font/IRAN.woff") format("woff"),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-			url("../font/IRAN.svg") format("svg")
-			url("../font/IRAN.ttf") format("truetype");
+	src: 	url("../font/Vazir.woff") format("woff");  /* IE6–8 */
+	src: 	url("../font/Vazir.eot?#ie6") format("eot"),  /* IE6–8 */
+			url("../font/Vazir.woff") format("woff"),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+			url("../font/Vazir.svg") format("svg")
+			url("../font/Vazir.ttf") format("truetype");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -12,7 +12,7 @@
 *{
 	margin: 0;
 	padding:0;
-	font-family: IRAN, Tahoma;
+	font-family: Vazir, Tahoma;
 	direction: rtl;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -46,7 +46,7 @@ h6 { font-size: .75em; }
 }
 
 a{
-	color: #276D7D;
+	color: #835B74;
 	text-decoration: none;
 }
 .b{
@@ -56,17 +56,17 @@ a{
 button, .likebutton{
 	display: inline-block;
 	min-width: 80px;
-	padding: .3em 1em;
-	background: #276D7D;
+	padding: .3em 1em .6em 1em;
+	background: #835B74;
 	border: none;
-	border-bottom: solid 2px #1D505B;
+	border-bottom: solid 2px #5E3850;
 	border-top: solid 2px transparent;
 	color: #E6E6E6;
 	cursor: pointer;
 	font-size: .8em;
 }
 button:active, .likebutton:active{
-	border-top: solid 2px #1D505B;
+	border-top: solid 2px #5E3850;
 	border-bottom: solid 2px transparent;
 }
 button[disabled], .likebutton[disabled]{
@@ -92,8 +92,8 @@ button[disabled], .likebutton[disabled]{
 		transition: all .3s;
 	}
 	#header > h1 > a:hover{
-		color: #276D7D;
-		fill: #276D7D;
+		color: #835B74;
+		fill: #835B74;
 	}
 	#header svg{
  		width: 43px;
@@ -129,10 +129,10 @@ button[disabled], .likebutton[disabled]{
 		transition: all .3s;
 	}
 	#menu > ul > li.selected{
-		color: #276D7D;
+		color: #835B74;
 	}
 	#menu > ul > li:hover{
-		color: #276D7D;
+		color: #835B74;
 	}
 	#menu > ul > li > a{
 		color: inherit;
@@ -164,7 +164,7 @@ button[disabled], .likebutton[disabled]{
 	font-size: .9em;
 }
 #content > .pagination a.olderpage{
-	color: #B10802;
+	color: #AD4721;
 }
 #content > .pagination a .icon{
 	font-size: .7em;
@@ -184,7 +184,7 @@ button[disabled], .likebutton[disabled]{
 }
 
 #content > .post > .header > .title{
-	color: #276D7D;
+	color: #835B74;
 	margin-bottom: .4em;
 	line-height: 1.4em;
 }
@@ -250,7 +250,7 @@ button[disabled], .likebutton[disabled]{
 }
 
 #content .post > .body .read-more{
-	color: #B10802;
+	color: #AD4721;
 	font-weight: bold;
 }
 
@@ -319,7 +319,7 @@ button[disabled], .likebutton[disabled]{
 #content .post > .comments > .new-comment > .add-comment-link{
 	font-size: .8em;
 	font-weight: bold;
-	color: #276D7D;
+	color: #835B74;
 	border-right: solid 2px #E6E6E6;
 	padding-right: 1em;
 	cursor: pointer;
@@ -344,13 +344,13 @@ button[disabled], .likebutton[disabled]{
 	color: inherit;
 }
 #content .post > .comments > .list .comment > .name{
-	color: #276D7D;
+	color: #835B74;
 	font-weight: bold;
 	float: right;
 	margin-left: 5px;
 }
 #content .post > .comments > .list .comment > .name.me{
-	color: #B10802;
+	color: #AD4721;
 }
 #content .post > .comments > .list .comment > .name:after{
 	content: ': ';
@@ -358,7 +358,7 @@ button[disabled], .likebutton[disabled]{
 
 .loading{
     background: url('../../images/loading.gif') no-repeat right center;
-    color: #276D7D;
+    color: #835B74;
     width: 16px;
     height: 16px;
 	display: inline-block;
