@@ -30,7 +30,7 @@ telegram_channel: https://telegram.me/mordeir
 
 
 
-paginate: 5
+paginate: 9
 paginate_path: "/page:num"
 
 #
