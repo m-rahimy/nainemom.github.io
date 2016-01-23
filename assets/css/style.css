@@ -1,10 +1,9 @@
 ﻿@font-face {
-	font-family: 'IRAN';
-	src: 	url("../font/Vazir.woff") format("woff");  /* IE6–8 */
-	src: 	url("../font/Vazir.eot?#ie6") format("eot"),  /* IE6–8 */
-			url("../font/Vazir.woff") format("woff"),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-			url("../font/Vazir.svg") format("svg")
-			url("../font/Vazir.ttf") format("truetype");
+	font-family: 'Vazir';
+	src: 	url("../font/Vazir-persian-digits-overwrite.woff") format("woff");  /* IE6–8 */
+	src: 	url("../font/Vazir-persian-digits-overwrite.eot?#ie6") format("eot"),  /* IE6–8 */
+			url("../font/Vazir-persian-digits-overwrite.woff") format("woff"),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+			url("../font/Vazir-persian-digits-overwrite.ttf") format("truetype");
 	font-weight:normal;
 	font-style:normal;
 }
