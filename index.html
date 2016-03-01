@@ -21,9 +21,7 @@ layout: default
 			</h6>
 			<h6 class="date">
 				<i class="icon icon-calendar-empty"></i>
-				{% assign d = post.date | date: "%-d" %}{% case d %}{% when '1' %}۱{% when '2' %}۲{% when '3' %}۳{% when '4' %}۴{% when '5' %}۵{% when '6' %}۶{% when '7' %}۷{% when '8' %}۸{% when '9' %}۹{% when '10' %}۱۰{% when '11' %}۱۱{% when '12' %}۱۲{% when '13' %}۱۳{% when '14' %}۱۴{% when '15' %}۱۵{% when '16' %}۱۶{% when '17' %}۱۷{% when '18' %}۱۸{% when '19' %}۱۹{% when '20' %}۲۰{% when '21' %}۲۱{% when '22' %}۲۲{% when '23' %}۲۳{% when '24' %}۲۴{% when '25' %}۲۵{% when '26' %}۲۶{% when '27' %}۲۷{% when '28' %}۲۸{% when '29' %}۲۹{% when '30' %}۳۰{% when '31' %}۳۱{% endcase %}
-				{% assign m = post.date | date: "%-m" %}{% case m %}{% when '1' %}فروردین{% when '2' %}اردیبهشت{% when '3' %}خرداد{% when '4' %}تیر{% when '5' %}مرداد{% when '6' %}شهریور{% when '7' %}مهر{% when '8' %}آبان{% when '9' %}آذر{% when '10' %}دی{% when '11' %}بهمن{% when '12' %}اسفند{% endcase %}
-				{% assign y = post.date | date: "%-y" %}{% case y %}{% when '94' %}۹۴{% when '95' %}۹۵{% when '96' %}۹۶{% when '97' %}۹۷{% when '98' %}۹۸{% when '99' %}۹۹{% when '00' %}۰۰{% endcase %}
+				{{ post.date | date: "%-d / %-m / %Y" }}
 			</h6>
 			<h6 class="tags">
 				<i class="icon icon-tags"></i>

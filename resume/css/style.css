@@ -1,3 +1,6 @@
+#header{
+	display: none;
+}
 #resume{
 	font-size: 13pt;
 }
@@ -32,6 +35,12 @@
 #resume .part table td:last-child{
 	text-align: left;
 }
+#resume .part table .child{
+	opacity: .7;
+}
+#resume .part table .child:before{
+	content: ' - ';
+}
 #resume .part hr{
 	border: none;
 	border-bottom: solid 5px rgba(255,255,255,.1);
@@ -41,6 +50,7 @@
 #resume .part hr.dark{
 	border-bottom-color: rgba(0,0,0,.1);
 }
+
 #resume .part svg.crooked {
     pointer-events: none;
 	pointer-events: none;
@@ -82,10 +92,7 @@
 #resume #part-info p{
 	text-align: justify;
 }
-#resume #part-resume table tr td:first-child{
-	color: #0293AF;
-}
-#resume #part-design-sample .content{
+#resume .normal-width{
 	max-width: 960px;
 }
 
@@ -107,10 +114,50 @@
 	min-width: 100px;
 }
 #resume .nai-value div{
-	background: #03768C;
+	background: #835B74;
     position: relative;
     border-left: solid 5px rgba(0,0,0,.2);
     height: 40px;
 	margin-top: -10px;
 	right: 0;
+}
+
+#resume .images{
+}
+#resume .image{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	display: inline-block;
+	text-align: center;
+	margin: 2px;
+}
+#resume .imagerowtitle{
+	width: 100%;
+	margin-top: 25px;
+	padding: 15px;
+	display: inline-block;
+}
+#resume .imagerowtitle hr{
+	width: 70%;
+	margin: 0 auto;
+}
+#resume .imagerowtitle h2,
+#resume .imagerowtitle small{
+	text-align: center;
+}
+#resume .imagerowtitle small{
+	font-size: .8em;
+}
+#resume  .image > img{
+	height: 200px;
+	width: 355.5px;
+	margin: 0 -77.75px 0 0;
+	transition: all .3s;
+	cursor: pointer;
+}
+#resume .image:hover > img{
+	width: 200px;
+	height: 112.5px;
+	margin: 43.75px 0 0 0;
 }
