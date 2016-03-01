@@ -11,6 +11,7 @@ function commentsToLayout( sectionId, comments ){
 		if( comments[i].name == '' ){
 			nm.classList.add('me');
 			comments[i].name = 'امير';
+			comments[i].link = 'https://twitter.com/nainemom'
 		}
 		if( comments[i].link ){
 			ln = document.createElement('a');
