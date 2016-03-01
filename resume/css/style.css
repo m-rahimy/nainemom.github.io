@@ -48,8 +48,8 @@
 	height: 70px;
 }
 #resume .part svg.crooked.blue-to-light{
-	fill: #03768C;
-    stroke: #03768C;
+	fill: #835B74;
+    stroke: #835B74;
 	background: #E6E6E6;
 }
 #resume .part svg.crooked.light-to-dark{
@@ -64,13 +64,13 @@
 }
 
 #resume .bg-blue{
-	background: #03768C;
+	background: #835B74;
 	color: #E6E6E6;
 }
 #resume .bg-light{
 	background: #E6E6E6;
 	color: #2C2C2C;
-	border-color: #03768C;
+	border-color: #835B74;
 }
 #resume .bg-dark{
 	background: #2C2C2C;
