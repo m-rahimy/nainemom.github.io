@@ -221,9 +221,10 @@ button[disabled], .likebutton[disabled]{
 	margin: 1em 0;
 	font-size: .9em;
 	display: block;
-	text-align: center;
+	/* text-align: center; */
 	color: #676767;
-	
+	border-right: solid 4px #CCC;
+	background: #E9E9E9;
 }
 #content .post > .body blockquote:before,
 #content .post > .body blockquote:after{
@@ -233,13 +234,13 @@ button[disabled], .likebutton[disabled]{
 	font-size: .9em;
 }
 #content .post > .body blockquote::before{
-	content: '\e809';
- 	margin-right: .7em;
+	/* content: '\e809'; */
+	margin-right: .7em;
 	/*margin-right: -1.7em; */
 }
 #content .post > .body blockquote::after{
-	content: '\e800';
- 	margin-left: .7em;
+	/* content: '\e800'; */
+	/* margin-left: .7em; */
 	/*margin-left: -1.7em; */
 }
 
