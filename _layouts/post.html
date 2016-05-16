@@ -37,7 +37,22 @@ layout: default
 	<div class="body">
 		{{ content }}
 	</div>
-	<br/>
+	<hr/>
+	{% if page.suggests %}
+		<p class="suggests">این داستان‌ها هم تا حدودی به داستان بالا شباهت دارند:</p>
+		<div class="suggests">
+				{% for suggest in page.suggests %}
+					{% for post in site.posts %}
+						{% if post.url == suggest %}
+							<a class="suggest" href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+						{% endif %}
+							
+						
+					{% endfor %}
+				{% endfor %}
+		</div>
+		<hr/>
+	{% endif %}
 	<div class="comments">
 		<form class="new-comment" id="new-comment" method="post" action="{{site.commenturl}}index.php">
 			<input type="hidden" name="operation" value="add">

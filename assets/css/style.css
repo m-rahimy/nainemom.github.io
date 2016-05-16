@@ -200,7 +200,7 @@ button[disabled], .likebutton[disabled]{
 #content > .post > .header > .tags a:not(:last-child):after{
 	content: '،';
 }
-#content > .post > .body{
+#content > .post > .body, #content .post > .suggests{
 	font-size: 0.875em;
 	line-height: 25pt;
 	padding: .3em 1em;
@@ -280,6 +280,27 @@ button[disabled], .likebutton[disabled]{
 }
 #content .post > .comments.disabled *{
 	cursor: not-allowed;
+}
+
+#content .post > .suggests{
+	text-align: center;
+	margin: 0;
+}
+#content .post > .suggests > .suggest{
+	font-weight: bold;
+	font-size: 1.1em;
+}
+#content .post > .suggests > .suggest:not(:first-child):before{
+	content: '، ';
+	font-weight: normal;
+	cursor: default;
+	color: #505050;
+}
+#content .post > .suggests > .suggest:first-child:before{
+	content: '';
+}
+#content .post > .suggests > .suggest:last-child:before{
+	content: ' و ';
 }
 
 #_oss_container{
@@ -375,7 +396,9 @@ button[disabled], .likebutton[disabled]{
 .clickable{
 	cursor: pointer;
 }
-
+.inline{
+	display: inline;
+}
 
 
 @media screen and (max-width: 1024px) {
