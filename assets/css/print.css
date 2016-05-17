@@ -1,0 +1,42 @@
+﻿@font-face {
+	font-family: 'Parastoo';
+	src: 	url("../font/Parastoo-persian-digits-overwrite.woff") format("woff");  /* IE6–8 */
+	src: 	url("../font/Parastoo-persian-digits-overwrite.eot?#ie6") format("eot"),  /* IE6–8 */
+			url("../font/Parastoo-persian-digits-overwrite.woff") format("woff"),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+			url("../font/Parastoo-persian-digits-overwrite.ttf") format("truetype");
+	font-weight:normal;
+	font-style:normal;
+}
+ 
+*{
+	font-family: Parastoo;   
+}
+#header, #menu, #content > .post.pin, #content > .post > .header > h6, .comments{
+	display: none;   
+}
+
+#content > .post, html, body{
+    background: #fff;
+    color: #000;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    border: none;
+}
+
+#content > .post > .body, #content .post > .suggests, a, #content .post > .body blockquote{
+	color: #000;   
+}
+#content .post > .body blockquote{
+	background: transparent;
+    font-size: 1em;
+}
+#content{
+	font-size: 0.81em;
+}
+#content > .post > .body, #content .post > .suggests{
+	line-height: 20pt;   
+}
+#content > .post hr, .suggests{
+	display: none;   
+}
