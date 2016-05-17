@@ -32,10 +32,10 @@
     font-size: 1em;
 }
 #content{
-	font-size: 0.75em;
+	font-size: 0.7em;
 }
 #content > .post > .body, #content .post > .suggests{
-	line-height: 16pt;   
+	line-height: 15pt;   
 }
 #content > .post hr, .suggests{
 	display: none;   
