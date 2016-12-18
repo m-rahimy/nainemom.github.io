@@ -33,8 +33,8 @@ layout: default
 	<div class="body">
 		{{ content }}
 	</div>
-	<hr/>
 	{% if page.suggests %}
+		<hr/>
 		<p class="suggests">این داستان‌ها هم تا حدودی به داستان بالا شباهت دارند:</p>
 		<div class="suggests">
 				{% for suggest in page.suggests %}
@@ -47,7 +47,6 @@ layout: default
 					{% endfor %}
 				{% endfor %}
 		</div>
-		<hr/>
 	{% endif %}
 	{% if false %}
 	<div class="comments">
