@@ -28,10 +28,6 @@ layout: default
 				<a href="https://www.google.com/webhp?#q={{tag}}+site:{{ site.url }}" rel="tag">{{tag}}</a> 
 			{% endfor %}
 		</h6>
-		<h6 class="tags">
-			<i class="icon icon-eye"></i>
-			<span id="reads-count"><div class="loading"></div></span>
-		</h6>
 		<div class="clear-both"></div>
 	</div>
 	<div class="body">
@@ -53,6 +49,7 @@ layout: default
 		</div>
 		<hr/>
 	{% endif %}
+	{% if false %}
 	<div class="comments">
 		<form class="new-comment" id="new-comment" method="post" action="{{site.commenturl}}index.php">
 			<input type="hidden" name="operation" value="add">
@@ -71,8 +68,9 @@ layout: default
 		</div>
 		<div class="clear-both"></div>
 	</div>
+	{% endif %}
 </article>
-
+{% if false %}
 <script>
 	var commentForm = document.getElementById('new-comment');
 	var commentName = document.getElementById('comment-name');
@@ -118,3 +116,4 @@ layout: default
 		addLinkInit();
 	}
 </script>
+{% endif %}
